@@ -4,12 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/main.css">
+    <script src="assets/styles/script.js" defer></script>
+    
     <title>Document</title>
 </head>
 <body>
     
-<h1>Vilde testing</h1>
-<h2>Testing2</h2>
+
+<section class="main-container">
+      <div class="shapes-container">
+        <svg class="hills" viewBox="0 0 800 400" preserveAspectRatio="none"> 
+          <path class="hill hill--brown" d="M0,300 Q200,100 400,300 T800,300 L800,400 L0,400 z"></path> <!-- Hill -->
+          <path class="hill hill--beige" d="M0,350 Q250,200 500,350 T800,350 L800,400 L0,400 Z"></path> <!-- Hill -->
+        
+               <!-- Flower -->
+                <path class="stem" d="M200 80 Q198 350 200 30" stroke="#3b7d3f" stroke-width="4" fill="none"/> <!-- Stem -->
+                <path class="leaf" d="M200 150 Q190 145 185 155 Q190 160 200 150 Z" fill="#4CAF50"/> <!-- Leaf -->
+                <circle class="petal petal-0" cx="200" cy="50" r="10" fill="#FFD1DC"></circle> <!-- center -->
+                <circle class="petal petal-1" cx="200" cy="30" r="10" fill="#FFC8DC"></circle> <!-- Petal -->
+                <circle class="petal petal-2" cx="215" cy="35" r="10" fill="#FFD1DC"></circle> <!-- Petal -->
+                <circle class="petal petal-3" cx="215" cy="65" r="10" fill="#FFC8DC"></circle> <!-- Petal -->
+                <circle class="petal petal-4" cx="200" cy="70" r="10" fill="#FFD1DC"></circle> <!-- Petal -->
+                <circle class="petal petal-5" cx="185" cy="65" r="10" fill="#FFC8DC"></circle> <!-- Petal -->
+                <circle class="petal petal-6" cx="183" cy="35" r="10" fill="#FFD1DC"></circle> <!-- Petal -->
+                <circle class="petal petal-7" cx="180" cy="50" r="10" fill="#FFD1DC"></circle> <!-- Petal -->
+                <circle class="petal petal-8" cx="220" cy="50" r="10" fill="#FFD1DC"></circle> <!-- Petal -->
+                <circle class="center" cx="200" cy="50" r="6" fill="#FF69B4"></circle> <!-- flower center -->
+        </svg>
+      </div>
+
+    <div class="container-text">
+        <p class="text">Every year, 13 million hectar of land is lost. That equals 18 million football fields</p>
+    </div>
+
+</section>
+
+<section class="football-section">
+    <div class="football-animation">
+        <img class="football_1" src="SVG/footballfield.svg" alt="football field">
+        <img class="football_2" src="SVG/footballfield.svg" alt="football field">
+        <img class="football_3" src="SVG/footballfield.svg" alt="football field">
+        <img class="football_4" src="SVG/footballfield.svg" alt="football field">
+    </div>
+</section>
+</div>
+
 
 </body>
 </html>
