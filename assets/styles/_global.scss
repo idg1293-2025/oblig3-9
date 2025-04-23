@@ -25,7 +25,8 @@
       perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%)
         calc(var(--scenePerspectiveOriginY) * 1%);
       will-change: perspective-origin;
-      transform: translate3d(0, 0, 0); //Allow Hardware-Accelerated CSS
+      transform: translate3d(calc(var(--cameraX, 0) * 1px), 0, calc(var(--cameraZ, 0) * -1px));
+      transition: transform 0.3s ease-out;
     }
   
       .viewport .scene3D-container .scene3D {
@@ -40,11 +41,11 @@
         > .tree {
             position: absolute;
             display: block;
-            width: 100%;
-            top: 40%;
+            width: 400%;
+            top: 30%;
   
-          @media only screen and (min-width: 600px) {
-            width: 45%;
+          @media only screen and (min-width: 800px) {
+            width: 40%;
           }
   
           &:nth-child(2n) {
@@ -84,49 +85,19 @@
   
   body {
     background-color: hsl(231, 15%, 18%);
-    color: hsl(231, 15%, 18%);
     padding: 0;
     margin: 0;
   }
   
-  h1 {
-    font-family: "Playfair Display SC", serif;
-    font-size: 1.5rem;
-    color: hsl(0, 0%, 100%);
-    margin: 0;
-    position: fixed;
-    bottom: 1rem;
-    left: 1rem;
-    text-align: center;
-    .logo {
-      display: block;
-      margin: 0 auto;
-      max-width: 150px;
-    }
-  }
+
   
-  .link {
-    color: hsl(0, 0%, 100%);
-    margin: 0;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1;
-  }
-  
+
   .scene3D {
     > .tree {
-      padding: 2rem;
-  
-      h2 {
-        margin-top: 0;
-        font-family: "Playfair Display SC", serif;
-        font-size: 1.5rem;
-      }
-  
+      
       @for $i from 0 through 25 {
         &:nth-child(#{$i}) {
-          background-color: hsl(-30 + ($i * 30), 100%, 88%);
+          background-color: none;
         }
       }
     }
