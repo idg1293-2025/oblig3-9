@@ -1,1 +1,137 @@
 @use "variables" as *;
+
+
+
+
+
+
+//polar-bear animation block
+
+.polar-bear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#001f3f, #0074D9);
+    color: white;
+    padding: 2rem 1rem;
+    min-height: 50vh;
+    max-width: 700px;
+    margin: 5rem auto;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+
+    &__title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    &__text {
+      max-width: 600px;
+      text-align: center;
+    }
+  
+    &__visual {
+      position: relative;
+      margin-top: 3rem;
+      height: 300px;
+    }
+  
+    &__ice {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      background: #e0f7fa;
+      border-radius: 50%;
+      animation: shrinkIce 7s ease-in-out forwards;
+    }
+  
+    &__img {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      opacity: 0;
+      animation: sinkBear 7s ease-in-out forwards;
+    }
+  }
+  
+  @keyframes shrinkIce {
+    0% {
+      width: 200px;
+      height: 100px;
+    }
+    100% {
+      width: 100px;
+      height: 50px;
+      opacity: 0.5;
+    }
+  }
+  
+  @keyframes sinkBear {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      transform: translateX(-50%) translateY(100px);
+      opacity: 0;
+    }
+  }
+
+  
+
+  .polar-bear__ice {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    background: #e0f7fa;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  .polar-bear__img {
+    position: absolute;
+    bottom: 30px;
+    width: 60px;
+    opacity: 1;
+    animation: none;
+  }
+  
+  .bear-1 {
+    left: 10%;
+  }
+  .bear-2 {
+    left: 45%;
+  }
+  .bear-3 {
+    left: 75%;
+  }
+
+  .visible.polar-bear__ice {
+    animation: shrinkIce 7s ease-in-out forwards;
+  }
+  
+  .visible.polar-bear__img {
+    animation: sinkBear 7s ease-in-out forwards;
+  }
+
+  .visible .bear-1 {
+    animation: sinkBear 4s ease-in-out 0s forwards;
+  }
+  .visible .bear-2 {
+    animation: sinkBear 4s ease-in-out 1.5s forwards;
+  }
+  .visible .bear-3 {
+    animation: sinkBear 4s ease-in-out 3s forwards;
+  }
+  .hidden-right {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: none;
+  }
