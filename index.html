@@ -14,6 +14,8 @@
 <section class="main-container">
       <div class="shapes-container">
         <svg class="hills" viewBox="0 0 800 400" preserveAspectRatio="none"> 
+
+            <!-- Hills -->
           <path class="hill hill--brown" d="M0,300 Q200,100 400,300 T800,300 L800,400 L0,400 z"></path> <!-- Hill -->
           <path class="hill hill--beige" d="M0,350 Q250,200 500,350 T800,350 L800,400 L0,400 Z"></path> <!-- Hill -->
         
@@ -34,9 +36,8 @@
       </div>
 
     <div class="container-text">
-        <p class="text">Every year, 13 million hectar of land is lost. That equals 18 million football fields</p>
+        <p class="text">Every year, 13 million hectar of land is lost. That equals 18 million football fields. Needs more text</p>
     </div>
-
 </section>
 
 <section class="football-section">
@@ -47,8 +48,33 @@
         <img class="football_4" src="SVG/footballfield.svg" alt="football field">
     </div>
 </section>
-</div>
 
+<section class="city-container">
+    <div class="city-line">
+        <svg class="cityscape" viewBox="0 0 800 400" preserveAspectRatio="none">
+            <!-- Buildings -->
+            <!-- Skyscraper -->
+            <rect x="600" y="100" width="40" height="250" fill="#2c3e50"/>
+            <rect x="605" y="110" width="10" height="10" fill="#ecf0f1"/>
+            <rect x="605" y="130" width="10" height="10" fill="#ecf0f1"/>
+            <rect x="605" y="150" width="10" height="10" fill="#ecf0f1"/>
+            <rect x="605" y="170" width="10" height="10" fill="#ecf0f1"/>
+            <rect x="605" y="190" width="10" height="10" fill="#ecf0f1"/>
+            <rect x="605" y="210" width="10" height="10" fill="#ecf0f1"/>
+            
+            <!-- Houses -->
+            <rect x="100" y="230" width="60" height="70" fill="#e74c3c"/>
+            <polygon points="100,230 160,230 130,190" fill="#c0392b"/>
+            <rect x="220" y="240" width="80" height="60" fill="#f39c12"/>
+            <polygon points="220,240 300,240 260,200" fill="#e67e22"/>
+            <rect x="350" y="220" width="50" height="80" fill="#16a085"/>
+            <polygon points="350,220 400,220 375,180" fill="#1abc9c"/>
+            
+            <!-- Ground -->
+            <path class="ground" d="M0,300 L800,300 L800,400 L0,400 Z" fill="#95a5a6"/>
+        </svg>
+    </div>
+</section>
 
 </body>
 </html>
