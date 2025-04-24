@@ -9,5 +9,6 @@
     "liveSassCompile.settings.excludeList": [
       "/**/node_modules/**",
       "/.vscode/**"
-    ]
+    ],
+    "liveServer.settings.port": 5501
   }
