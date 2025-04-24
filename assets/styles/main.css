@@ -9,6 +9,8 @@ body {
 .main-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 45vh;
+  width: 100%;
   justify-content: space-between;
   gap: 2rem;
   align-items: center;
@@ -17,7 +19,7 @@ body {
 
 .container-text {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font-size: 1.2rem;
   line-height: 1.5;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -40,11 +42,21 @@ body {
 
 .shapes-container {
   position: relative;
+  grid-column: 1;
   width: 100%;
   height: 100%;
   border-radius: 2rem;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container-text,
+.city-container {
+  grid-column: 2;
+  grid-row: 1;
+  position: absolute;
+  height: 100%;
+  transition: opacity 0.5s ease;
 }
 
 .hills {
@@ -59,9 +71,36 @@ body {
 .hill--beige {
   fill: #ab6e58;
 }
+.hill--blue {
+  fill: #001f3f;
+}
 
 .hill--brown {
-  animation: expand-brown 6s ease-in-out forwards; /* Smooth expansion */
+  animation: expand-brown 6s ease-in-out forwards;
+}
+
+.house-1 {
+  fill: #813f3f;
+}
+
+.house-2 {
+  fill: #b9c79a;
+}
+
+.house-3 {
+  fill: #778ca9;
+}
+
+.house-1-roof {
+  fill: #000000;
+}
+
+.house-2-roof {
+  fill: #000000;
+}
+
+.house-3-roof {
+  fill: #000000;
 }
 
 /* Football fields */
@@ -152,12 +191,11 @@ body {
 
 /* City Container */
 .city-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10; /* Ensure it's above the football section */
+  display: grid;
+  align-items: center;
+  z-index: 10;
   width: 100%;
-  height: 100%; /* Set a height to ensure it's visible */
+  height: 100%;
   border-radius: 2rem;
   opacity: 0;
   visibility: hidden;
@@ -165,16 +203,24 @@ body {
   transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
 }
 
+.main-container.show-city .container-text {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
 /* Cityline SVG */
 .city-line {
   position: relative;
+  max-width: 100%;
+  max-height: 100%;
   width: 100%;
-  height: 100%; /* Ensure it takes up full container height */
+  height: auto; /* Ensure it takes up full container height */
 }
 
 .cityscape {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block; /* Make sure it's displayed correctly */
 }
 

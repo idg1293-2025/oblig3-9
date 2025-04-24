@@ -3,6 +3,8 @@
 .main-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 45vh;
+    width: 100%;
     justify-content: space-between;
     gap: 2rem;
     align-items: center;
@@ -11,7 +13,7 @@
 
 .container-text{
     position: relative;
-    z-index: 1;
+    z-index: 2;
     font-size: 1.2rem;
     line-height: 1.5;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -34,6 +36,7 @@
 
 .shapes-container{
     position: relative;
+    grid-column: 1;
     width: 100%;
     height: 100%;
     border-radius: $border-radius;
@@ -41,6 +44,16 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+.container-text,
+.city-container{
+    grid-column: 2;
+    grid-row: 1;
+    position: absolute;
+    height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+//Hills 
 
 .hills{
     width: 100%;
@@ -56,10 +69,40 @@
     &--beige{
         fill: $color-hill--brown;
     }
+
+    &--blue{
+        fill: $color-hill--blue;
+    }
 }
 
+
 .hill--brown {
-    animation: expand-brown 6s ease-in-out forwards; /* Smooth expansion */
+    animation: expand-brown 6s ease-in-out forwards; 
+}
+
+.house-1{
+    fill:$color-house--1;
+}    
+
+.house-2{
+    fill: $color-house--2;
+}
+
+.house-3{
+    fill: $color-house--3;
+}
+
+
+.house-1-roof{
+    fill: $color-house-roof--1;
+}
+
+.house-2-roof{
+    fill: $color-house-roof--2;
+}
+
+.house-3-roof{
+    fill: $color-house-roof--3;
 }
 
 /* Football fields */
@@ -151,12 +194,11 @@
 //City-line 
 /* City Container */
 .city-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10; /* Ensure it's above the football section */
+    display: grid;
+    align-items: center;
+    z-index: 10; 
     width: 100%;
-    height: 100%; /* Set a height to ensure it's visible */
+    height: 100%; 
     border-radius: $border-radius;
     opacity: 0;
     visibility: hidden;
@@ -164,17 +206,24 @@
     transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
 }
 
+.main-container.show-city .container-text{
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+}
 
 /* Cityline SVG */
 .city-line {
     position: relative;
+    max-width: 100%;
+    max-height: 100%;
     width: 100%;
-    height: 100%; /* Ensure it takes up full container height */
+    height: auto; /* Ensure it takes up full container height */
 }
 
 .cityscape {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block; /* Make sure it's displayed correctly */
 }
 
