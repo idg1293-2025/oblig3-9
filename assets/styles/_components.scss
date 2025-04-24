@@ -14,7 +14,7 @@
     background: linear-gradient(#001f3f, #0074D9);
     color: white;
     padding: 2rem 1rem;
-    min-height: 50vh;
+    min-height: 40vh;
     max-width: 700px;
     margin: 5rem auto;
     border-radius: 1rem;
@@ -55,6 +55,11 @@
       opacity: 0;
       animation: sinkBear 7s ease-in-out forwards;
     }
+  }
+
+  .polar-bear__source a {
+    color: white;
+    text-decoration: underline;
   }
   
   @keyframes shrinkIce {
