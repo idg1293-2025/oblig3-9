@@ -1,223 +1,145 @@
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:900");
-:root {
-  --scenePerspective: 1;
-  --scenePerspectiveOriginX: 50;
-  --scenePerspectiveOriginY: 30;
-  --itemZ: 2;
-  --cameraSpeed: 150;
-  --cameraZ: 0;
-  --viewportHeight: 0;
-}
-
-.viewport {
-  height: calc(var(--viewportHeight) * 1px);
-}
-
-.viewport .scene3D-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  perspective: calc(var(--scenePerspective) * var(--cameraSpeed) * 1px);
-  perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%) calc(var(--scenePerspectiveOriginY) * 1%);
-  will-change: perspective-origin;
-  transform: translate3d(calc(var(--cameraX, 0) * 1px), 0, calc(var(--cameraZ, 0) * -1px));
-  transition: transform 0.3s ease-out;
-}
-
-.viewport .scene3D-container .scene3D {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  transform-style: preserve-3d;
-  transform: translateZ(calc(var(--cameraZ) * 1px));
-  will-change: transform;
-}
-.viewport .scene3D-container .scene3D > .tree {
-  position: absolute;
-  display: block;
-  width: 400%;
-  top: 30%;
-}
-@media only screen and (min-width: 800px) {
-  .viewport .scene3D-container .scene3D > .tree {
-    width: 40%;
-  }
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(2n) {
-  left: 0;
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(2n+1) {
-  right: 0;
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(0) {
-  transform: translate3D(-22%, 18%, calc(var(--itemZ) * var(--cameraSpeed) * 0 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(1) {
-  transform: translate3D(7%, -25%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(2) {
-  transform: translate3D(-16%, 26%, calc(var(--itemZ) * var(--cameraSpeed) * 2 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(3) {
-  transform: translate3D(-10%, -13%, calc(var(--itemZ) * var(--cameraSpeed) * 3 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(4) {
-  transform: translate3D(-7%, -32%, calc(var(--itemZ) * var(--cameraSpeed) * 4 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(5) {
-  transform: translate3D(12%, -19%, calc(var(--itemZ) * var(--cameraSpeed) * 5 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(6) {
-  transform: translate3D(-14%, 4%, calc(var(--itemZ) * var(--cameraSpeed) * 6 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(7) {
-  transform: translate3D(15%, -24%, calc(var(--itemZ) * var(--cameraSpeed) * 7 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(8) {
-  transform: translate3D(-17%, 45%, calc(var(--itemZ) * var(--cameraSpeed) * 8 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(9) {
-  transform: translate3D(-7%, 0%, calc(var(--itemZ) * var(--cameraSpeed) * 9 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(10) {
-  transform: translate3D(-23%, 8%, calc(var(--itemZ) * var(--cameraSpeed) * 10 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(11) {
-  transform: translate3D(11%, 25%, calc(var(--itemZ) * var(--cameraSpeed) * 11 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(12) {
-  transform: translate3D(12%, -32%, calc(var(--itemZ) * var(--cameraSpeed) * 12 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(13) {
-  transform: translate3D(7%, 29%, calc(var(--itemZ) * var(--cameraSpeed) * 13 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(14) {
-  transform: translate3D(-17%, 24%, calc(var(--itemZ) * var(--cameraSpeed) * 14 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(15) {
-  transform: translate3D(16%, -48%, calc(var(--itemZ) * var(--cameraSpeed) * 15 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(16) {
-  transform: translate3D(-9%, -16%, calc(var(--itemZ) * var(--cameraSpeed) * 16 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(17) {
-  transform: translate3D(24%, -4%, calc(var(--itemZ) * var(--cameraSpeed) * 17 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(18) {
-  transform: translate3D(-24%, -43%, calc(var(--itemZ) * var(--cameraSpeed) * 18 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(19) {
-  transform: translate3D(-3%, -6%, calc(var(--itemZ) * var(--cameraSpeed) * 19 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(20) {
-  transform: translate3D(-19%, 1%, calc(var(--itemZ) * var(--cameraSpeed) * 20 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(21) {
-  transform: translate3D(8%, 32%, calc(var(--itemZ) * var(--cameraSpeed) * 21 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(22) {
-  transform: translate3D(-24%, 33%, calc(var(--itemZ) * var(--cameraSpeed) * 22 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(23) {
-  transform: translate3D(-19%, -44%, calc(var(--itemZ) * var(--cameraSpeed) * 23 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(24) {
-  transform: translate3D(24%, -1%, calc(var(--itemZ) * var(--cameraSpeed) * 24 * -1px));
-}
-.viewport .scene3D-container .scene3D > .tree:nth-child(25) {
-  transform: translate3D(13%, -4%, calc(var(--itemZ) * var(--cameraSpeed) * 25 * -1px));
-}
-
-*,
-*:before,
-*:after {
+* {
   box-sizing: border-box;
 }
 
 body {
-  background-color: hsl(231, 15%, 18%);
-  padding: 0;
-  margin: 0;
+  height: 7000px;
+  text-align: center;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0%;
+  right: -45%;
+  bottom: -70%;
+  left: -25%;
+  background-image: url("/assets/svg/forrestbackground.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 0;
 }
 
-.scene3D > .tree:nth-child(0) {
-  background-color: none;
+#content-forrest {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* if smaller content box is used and centering is needed: 
+    top:50%;
+    left:50%;
+  6  transform: translate(-50%, -50%);
+    */
 }
-.scene3D > .tree:nth-child(1) {
-  background-color: none;
+
+.viewport {
+  perspective: 1000px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-.scene3D > .tree:nth-child(2) {
-  background-color: none;
+
+.tree {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
 }
-.scene3D > .tree:nth-child(3) {
-  background-color: none;
+
+.tree img {
+  display: block;
 }
-.scene3D > .tree:nth-child(4) {
-  background-color: none;
+
+.scene3D {
+  transform-style: preserve-3d;
 }
-.scene3D > .tree:nth-child(5) {
-  background-color: none;
+.scene3D__pinetree {
+  position: absolute;
+  left: 50%;
+  width: 80%;
+  padding-top: 35%;
 }
-.scene3D > .tree:nth-child(6) {
-  background-color: none;
+.scene3D__tree9 {
+  position: absolute;
+  width: 130%;
+  left: 10%;
 }
-.scene3D > .tree:nth-child(7) {
-  background-color: none;
+.scene3D__tree8 {
+  position: absolute;
+  width: 150%;
+  left: 10%;
 }
-.scene3D > .tree:nth-child(8) {
-  background-color: none;
+.scene3D__tree7 {
+  position: absolute;
+  width: 50%;
+  left: -50%;
 }
-.scene3D > .tree:nth-child(9) {
-  background-color: none;
+.scene3D__tree6 {
+  position: absolute;
+  width: 70%;
+  left: -40%;
 }
-.scene3D > .tree:nth-child(10) {
-  background-color: none;
+.scene3D__tree3 {
+  position: absolute;
+  width: 50%;
+  left: 50%;
 }
-.scene3D > .tree:nth-child(11) {
-  background-color: none;
+.scene3D__tree2 {
+  position: absolute;
+  width: 50%;
+  left: -30%;
 }
-.scene3D > .tree:nth-child(12) {
-  background-color: none;
+.scene3D__tree1 {
+  position: absolute;
+  width: 50%;
 }
-.scene3D > .tree:nth-child(13) {
-  background-color: none;
+.scene3D__treeonhill {
+  position: absolute;
+  width: 100%;
+  left: 10%;
+  padding-top: 30%;
 }
-.scene3D > .tree:nth-child(14) {
-  background-color: none;
+.scene3D__treecollection {
+  position: absolute;
+  width: 90%;
+  left: -10%;
+  padding-top: 40%;
 }
-.scene3D > .tree:nth-child(15) {
-  background-color: none;
+.scene3D__ground {
+  width: 550%;
 }
-.scene3D > .tree:nth-child(16) {
-  background-color: none;
+.scene3D__greentrees {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  padding-top: 5%;
 }
-.scene3D > .tree:nth-child(17) {
-  background-color: none;
+.scene3D__character {
+  position: absolute;
+  left: 50%;
+  width: 20%;
+  padding-top: 40%;
 }
-.scene3D > .tree:nth-child(18) {
-  background-color: none;
+.scene3D__lumbers2 {
+  position: absolute;
+  left: 25%;
+  width: 30%;
+  padding-top: 40%;
 }
-.scene3D > .tree:nth-child(19) {
-  background-color: none;
+.scene3D__lumbers1 {
+  position: absolute;
+  left: 15%;
+  width: 35%;
+  padding-top: 40%;
 }
-.scene3D > .tree:nth-child(20) {
-  background-color: none;
-}
-.scene3D > .tree:nth-child(21) {
-  background-color: none;
-}
-.scene3D > .tree:nth-child(22) {
-  background-color: none;
-}
-.scene3D > .tree:nth-child(23) {
-  background-color: none;
-}
-.scene3D > .tree:nth-child(24) {
-  background-color: none;
-}
-.scene3D > .tree:nth-child(25) {
-  background-color: none;
+.scene3D__construction-truck {
+  position: absolute;
+  left: 50%;
+  width: 40%;
+  padding-top: 15%;
 }/*# sourceMappingURL=main.css.map */

@@ -1,104 +1,173 @@
 @use "variables" as *;
-:root {
-    --scenePerspective: 1;
-    --scenePerspectiveOriginX: 50;
-    --scenePerspectiveOriginY: 30;
-    --itemZ: 2;
-    --cameraSpeed: 150; // Where 1 is the fastest
-    --cameraZ: 0;
-    --viewportHeight: 0;
-  }
-  
-  // Set 3D scene
-  
-  .viewport {
-    height: calc(var(--viewportHeight) * 1px);
-  }
-  
-    .viewport .scene3D-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      perspective: calc(var(--scenePerspective) * var(--cameraSpeed) * 1px);
-      perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%)
-        calc(var(--scenePerspectiveOriginY) * 1%);
-      will-change: perspective-origin;
-      transform: translate3d(calc(var(--cameraX, 0) * 1px), 0, calc(var(--cameraZ, 0) * -1px));
-      transition: transform 0.3s ease-out;
-    }
-  
-      .viewport .scene3D-container .scene3D {
-        position: absolute;
-        top: 0;
-        height: 100vh;
-        width: 100%;
-        transform-style: preserve-3d;
-        transform: translateZ(calc(var(--cameraZ) * 1px));
-        will-change: transform;
-  
-        > .tree {
-            position: absolute;
-            display: block;
-            width: 400%;
-            top: 30%;
-  
-          @media only screen and (min-width: 800px) {
-            width: 40%;
-          }
-  
-          &:nth-child(2n) {
-            left: 0;
-          }
-  
-          &:nth-child(2n + 1) {
-            right: 0;
-          }
-  
-          @for $i from 0 through 25 {
-            &:nth-child(#{$i}) {
-              transform: translate3D(
-                random(50) - 25 * 1%,
-                random(100) - 50 * 1%,
-                calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
-              );
-            }
-          }
-        }
-      }
+
+
+* {
+  box-sizing: border-box;
+}
     
+body {
   
-  
+    height:7000px;
+    text-align: center;
 
-  
-  // ----------
-  // Styling
-  // ----------
-  @import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:900");
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: hsl(231, 15%, 18%);
-    padding: 0;
-    margin: 0;
-  }
-  
-
-  
-
-  .scene3D {
-    > .tree {
-      
-      @for $i from 0 through 25 {
-        &:nth-child(#{$i}) {
-          background-color: none;
-        }
-      }
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0%;
+      right: -45%;
+      bottom: -70%;
+      left: -25%;
+      background-image: url("/assets/svg/forrestbackground.svg"); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      z-index: 0; 
     }
+}
+
+#content-forrest {
+    position:fixed; 
+    top:0%;
+    left:0;
+    width:100%;
+    height:100%;
+    /* if smaller content box is used and centering is needed: 
+    top:50%;
+    left:50%;
+  6  transform: translate(-50%, -50%);
+    */
+}
+
+.viewport {
+  perspective: 1000px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+
+.tree{
+  position:absolute;
+  width:150%;
+  height:150%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+}
+
+.tree img {
+  display: block;
+}
+
+.scene3D {
+  transform-style: preserve-3d;
+
+  &__pinetree {
+   position: absolute;
+   left: 50%;
+   width: 80%;
+ padding-top: 35%;
   }
+
+  &__tree9 {
+    position: absolute;
+    width: 130%;
+    left: 10%;
+  }
+
+  &__tree8 {
+    position: absolute;
+    width: 150%;
+    left: 10%;
+  }
+
+  &__tree7 {
+    position: absolute;
+    width: 50%;
+    left: -50%;
+  }
+
+  &__tree6 {
+    position: absolute;
+    width: 70%;
+    left: -40%;
+  }
+
+  &__tree3 {
+    position: absolute;
+    width: 50%;
+    left:50%
+  }
+
+  &__tree2 {
+    position: absolute;
+    width: 50%;
+    left: -30%;
+  }
+
+  &__tree1 {
+    position: absolute;
+    width: 50%;
+  }
+ 
+  &__treeonhill {
+    position: absolute;
+    width: 100%;
+    left: 10%;
+    padding-top: 30%;
+  }
+ 
+  &__treecollection {
+  position: absolute;
+  width: 90%;
+  left: -10%;
+  padding-top: 40%;
+}
+
+&__ground {
+  width: 550%;
+}
+
+&__greentrees {
+  position: absolute;
+left: 10%;
+  width: 80%;
+  padding-top: 5%;
+}
+
+&__character {
+  position: absolute;
+left: 50%;
+  width: 20%;
+  padding-top: 40%;
+}
+
+&__lumbers2 {
+  position: absolute;
+left: 25%;
+  width: 30%;
+
+  padding-top: 40%;
+}
+
+&__lumbers1 {
+  position: absolute;
+left: 15%;
+  width: 35%;
+
+  padding-top: 40%;
+}
+
+&__construction-truck {
+  position: absolute;
+left: 50%;
+  width: 40%;
+  padding-top: 15%;
+}
+
+}
+    
+
+  
