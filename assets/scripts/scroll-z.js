@@ -4,9 +4,8 @@ var perspective = 1000,
     $frames = $(".tree"),
     frames = $frames.toArray(),
     scrollMsg = document.getElementById("instructions-overlay"),
-    numFrames = $frames.length;
-
-const switchPoint = 1800; // Z movement stops here
+    numFrames = $frames.length,
+    switchPoint = 1800; // Z movement stops here
 
 // Setup initial Z positions
 for (var i = 0; i < numFrames; i++) {
@@ -30,13 +29,13 @@ $(window).scroll(function () {
     var cameraZ = 0;
     var cameraX = 0;
 
-    // If scroll Y is below the switch point, move Z forward
+    // Z-scroll before switchPoint
     if (yOffset < switchPoint) {
-      cameraZ = yOffset;  // Move in Z-axis
-      cameraX = 0;  // No movement on X-axis yet
+      cameraZ = yOffset;  
+      cameraX = 0; 
     } else {
-      cameraZ = switchPoint;  // Stop Z movement at the switch point
-      cameraX = (yOffset - switchPoint) * -1;  // Begin X movement after the switch point
+      cameraZ = switchPoint;  
+      cameraX = (yOffset - switchPoint) * -1; 
     }
 
     // Calculate final Z value for each frame
@@ -47,7 +46,6 @@ $(window).scroll(function () {
         opacity = frameZ < 50 ? 1 : 1 - Math.min(((frameZ - 100) / (perspective - 100)), 1),
         display = frameZ > perspective ? "none" : "block";
 
-    // Apply styles to each frame
     frame.style.transform = transform;
     frame.style.webkitTransform = transform;
     frame.style.mozTransform = transform;
@@ -59,5 +57,13 @@ $(window).scroll(function () {
   if (scrollMsg && yOffset > 200) {
     scrollMsg.parentNode.removeChild(scrollMsg);
     scrollMsg = null;
+  }
+
+  // Horizontal movement of the main container
+  if (yOffset > switchPoint) {
+    var offsetX = (yOffset - switchPoint);
+    $('.horizontal-scroll').css('transform', 'translateX(' + (-offsetX) + 'px)');
+  } else {
+    $('.horizontal-scroll').css('transform', 'translateX(0)');
   }
 });

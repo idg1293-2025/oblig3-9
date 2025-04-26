@@ -1,1 +1,77 @@
 @use "variables" as *;
+
+/* Flower */
+.petal, .stem, .leaf, .center {
+    animation: fall 3s ease-in-out forwards;
+    position: absolute; 
+}
+
+.petal-0 {
+    animation-delay: 2s;
+}
+
+.petal-1 {
+    animation-delay: 2s; 
+}
+
+.petal-2 {
+    animation-delay: 3s; 
+}
+
+.petal-3 {
+    animation-delay: 3.5s; 
+}
+
+.petal-4 {
+    animation-delay: 3.5s; 
+}
+
+.petal-5 {
+    animation-delay: 3.5s; 
+}
+
+.petal-6 {
+    animation-delay: 3.5s; 
+}
+
+.petal-7 {
+    animation-delay: 3.7s; 
+}
+
+.petal-8 {
+    animation-delay: 3.7s; 
+}
+
+.stem {
+    animation-delay: 2s;
+}
+
+.center{
+    animation-delay: 2s;
+}
+
+.leaf{
+    animation-delay: 3s;
+}
+
+
+.hills{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.hill{
+    &--brown{
+        fill: $color-hill--beige;
+    }
+
+    &--beige{
+        fill: $color-hill--brown;
+    }
+
+    &--blue{
+        fill: $color-hill--blue;
+    }
+}

@@ -2,11 +2,13 @@
   box-sizing: border-box;
 }
 
-body {
+body, html {
   height: 7000px;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
-body::before {
+body::before, html::before {
   content: "";
   position: fixed;
   top: 0%;
@@ -19,6 +21,96 @@ body::before {
   background-position: center;
   background-size: contain;
   z-index: 0;
+}
+
+.main-container-wrapper {
+  position: relative;
+}
+
+.horizontal-scroll {
+  position: fixed;
+  top: 0;
+  left: 110%;
+  height: 100vh;
+  width: 500vw; /* Width depends on how much horizontal content you have */
+  display: flex;
+  will-change: transform;
+}
+
+.horizontal-section {
+  flex: 0 0 100vw;
+  height: 100vh;
+}
+
+/* Flower */
+.petal, .stem, .leaf, .center {
+  animation: fall 3s ease-in-out forwards;
+  position: absolute;
+}
+
+.petal-0 {
+  animation-delay: 2s;
+}
+
+.petal-1 {
+  animation-delay: 2s;
+}
+
+.petal-2 {
+  animation-delay: 3s;
+}
+
+.petal-3 {
+  animation-delay: 3.5s;
+}
+
+.petal-4 {
+  animation-delay: 3.5s;
+}
+
+.petal-5 {
+  animation-delay: 3.5s;
+}
+
+.petal-6 {
+  animation-delay: 3.5s;
+}
+
+.petal-7 {
+  animation-delay: 3.7s;
+}
+
+.petal-8 {
+  animation-delay: 3.7s;
+}
+
+.stem {
+  animation-delay: 2s;
+}
+
+.center {
+  animation-delay: 2s;
+}
+
+.leaf {
+  animation-delay: 3s;
+}
+
+.hills {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.hill--brown {
+  fill: #c5ac99;
+}
+.hill--beige {
+  fill: #ab6e58;
+}
+.hill--blue {
+  fill: #001f3f;
 }
 
 #content-forrest {
@@ -104,6 +196,12 @@ body::before {
   left: 10%;
   padding-top: 30%;
 }
+.scene3D__leaftree2 {
+  position: absolute;
+  width: 100%;
+  left: -68%;
+  padding-top: 6%;
+}
 .scene3D__treecollection {
   position: absolute;
   width: 90%;
@@ -142,4 +240,15 @@ body::before {
   left: 50%;
   width: 40%;
   padding-top: 15%;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(300px) rotate(360deg);
+    opacity: 0;
+  }
 }/*# sourceMappingURL=main.css.map */
