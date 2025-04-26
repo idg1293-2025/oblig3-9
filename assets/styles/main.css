@@ -24,27 +24,90 @@ body::before, html::before {
 }
 
 .main-container-wrapper {
-  position: relative;
+  position: fixed;
 }
 
 .horizontal-scroll {
-  position: fixed;
-  top: 0;
-  left: 110%;
-  height: 100vh;
-  width: 500vw; /* Width depends on how much horizontal content you have */
-  display: flex;
-  will-change: transform;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 45vh;
+  width: 100%;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  left: 130%;
+  position: relative;
+}
+
+.container-text {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  background-color: white;
+  text-align: center;
+  font-family: sans-serif;
+  opacity: 1;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.container-text.fade-out {
+  opacity: 0; /* Fade out */
+  transform: translateY(-50px); /* Slide up */
 }
 
 .horizontal-section {
+  position: relative;
+  grid-column: 1;
+  width: 100%;
+  height: 100%;
+  top: 60%;
+  border-radius: 2rem;
+  overflow: hidden;
   flex: 0 0 100vw;
-  height: 100vh;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container-text,
+.city-container {
+  grid-column: 2;
+  grid-row: 1;
+  top: 60%;
+  position: absolute;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.hills {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.hill--brown {
+  fill: #c5ac99;
+}
+.hill--beige {
+  fill: #ab6e58;
+}
+.hill--blue {
+  fill: #001f3f;
+}
+
+.hill--brown {
+  animation: expand-brown 6s ease-in-out forwards;
 }
 
 /* Flower */
 .petal, .stem, .leaf, .center {
-  animation: fall 3s ease-in-out forwards;
+  animation: fall 10s ease-in-out forwards;
   position: absolute;
 }
 
@@ -77,40 +140,163 @@ body::before, html::before {
 }
 
 .petal-7 {
-  animation-delay: 3.7s;
+  animation-delay: 5.7s;
 }
 
 .petal-8 {
-  animation-delay: 3.7s;
+  animation-delay: 5.7s;
 }
 
 .stem {
-  animation-delay: 2s;
+  animation-delay: 6s;
 }
 
 .center {
-  animation-delay: 2s;
+  animation-delay: 6s;
 }
 
 .leaf {
-  animation-delay: 3s;
+  animation-delay: 7s;
 }
 
-.hills {
+.house-1 {
+  fill: #813f3f;
+}
+
+.house-2 {
+  fill: #b9c79a;
+}
+
+.house-3 {
+  fill: #778ca9;
+}
+
+.house-1-roof {
+  fill: #000000;
+}
+
+.house-2-roof {
+  fill: #000000;
+}
+
+.house-3-roof {
+  fill: #000000;
+}
+
+/* Football fields */
+.football-section {
+  position: relative;
+  z-index: 2;
+  left: 42%;
+}
+
+.football-section img {
+  width: 110%;
+  height: auto;
+  margin-top: -180px;
+}
+
+.football_1 {
+  z-index: 3;
+  position: absolute;
+  animation: slide-left-1 2s ease-in-out 2s forwards;
+}
+
+.football_2 {
+  z-index: 4;
+  position: absolute;
+  animation: slide-left-2 2s ease-in-out 3s forwards;
+}
+
+.football_3 {
+  z-index: 5;
+  position: absolute;
+  animation: slide-left-3 2s ease-in-out 3s forwards;
+}
+
+.football_4 {
+  z-index: 5;
+  position: absolute;
+  animation: slide-left-4 2s ease-in-out 3s forwards;
+}
+
+/* Football fields */
+.football-section {
+  position: absolute;
+  z-index: 2;
+  width: 15vh;
+  top: 40%;
+}
+
+.football_1 {
+  z-index: 3;
+  position: absolute;
+  animation: slide-left-1 2s ease-in-out 0s forwards;
+}
+
+.football_2 {
+  z-index: 4;
+  position: absolute;
+  animation: slide-left-2 2s ease-in-out 1s forwards;
+}
+
+.football_3 {
+  z-index: 5;
+  position: absolute;
+  animation: slide-left-3 2s ease-in-out 2s forwards;
+}
+
+.football_4 {
+  z-index: 5;
+  position: absolute;
+  animation: slide-left-4 2s ease-in-out 2s forwards;
+}
+
+/* City Container */
+.city-container {
+  display: grid;
+  align-items: center;
+  z-index: 10;
   width: 100%;
   height: 100%;
-  display: block;
-  position: relative;
+  border-radius: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
 }
 
-.hill--brown {
-  fill: #c5ac99;
+.main-container.show-city .container-text {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
 }
-.hill--beige {
-  fill: #ab6e58;
+
+/* Cityline SVG */
+.city-line {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: auto; /* Ensure it takes up full container height */
 }
-.hill--blue {
-  fill: #001f3f;
+
+.cityscape {
+  width: 100%;
+  height: auto;
+  display: block; /* Make sure it's displayed correctly */
+}
+
+/* Optional: If needed, set a background color to see the container */
+.city-container {
+  background-color: rgba(0, 0, 0, 0.05); /* Light background for visibility */
+}
+
+/* Visible state - for when the city container is shown */
+.city-container.visible {
+  opacity: 1; /* Make it fully visible */
+  visibility: visible; /* Ensure it is visible */
+  transition: opacity 0.5s ease-in-out, visibility 0s 0s; /* Fade in and no delay on visibility */
 }
 
 #content-forrest {
@@ -250,5 +436,63 @@ body::before, html::before {
   100% {
     transform: translateY(300px) rotate(360deg);
     opacity: 0;
+  }
+}
+@keyframes expand-brown {
+  0% {
+    d: path("M0,300 Q200,100 400,300 T800,300 L800,400 L0,400 z"); /* Original path */
+  }
+  100% {
+    d: path("M0,0 Q200,0 400,0 T800,0 L800,400 L0,400 Z"); /* Expanded path covers the full background */
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide-left-1 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-500%);
+    opacity: 1;
+  }
+}
+@keyframes slide-left-2 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-380%);
+    opacity: 1;
+  }
+}
+@keyframes slide-left-3 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-260%);
+    opacity: 1;
+  }
+}
+@keyframes slide-left-4 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-140%);
+    opacity: 1;
   }
 }/*# sourceMappingURL=main.css.map */
