@@ -111,8 +111,8 @@
 &__greentrees {
   position: absolute;
 left: 10%;
-  width: 80%;
-  padding-top: 5%;
+  width: 90%;
+  padding-top: 4%;
 }
 
 &__character {
@@ -122,12 +122,25 @@ left: 50%;
   padding-top: 40%;
 }
 
+&__stump {
+  position: absolute;
+left: 61.5%;
+  width: 13.5%;
+  padding-top: 60%;
+}
+
+&__cut-tree {
+  position: absolute;
+left: 57%;
+  width: 35%;
+ padding-top: 5%;
+}
+
 &__lumbers2 {
   position: absolute;
-left: 25%;
+left: 35%;
   width: 30%;
-
-  padding-top: 40%;
+  padding-top: 42%;
 }
 
 &__lumbers1 {
@@ -140,8 +153,9 @@ left: 15%;
 
 &__construction-truck {
   position: absolute;
-left: 50%;
+left: 70%;
   width: 40%;
-  padding-top: 15%;
+  padding-top: 20%;
 }
 }
+

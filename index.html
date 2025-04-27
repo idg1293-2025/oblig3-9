@@ -30,6 +30,12 @@
                 <div data-hidden="hidden-color" class="tree scene3D__lumbers1">
                     <img src="assets/svg/lumbers1.svg" alt="">
                 </div>
+                <div data-hidden="hidden-color" class="tree scene3D__cut-tree">
+                    <img src="assets/svg/cut-tree.svg" alt="" id="cut-tree-animation">
+                </div>
+                <div data-hidden="hidden-color" class="tree scene3D__stump">
+                    <img src="assets/svg/stump.svg" alt="">
+                </div>
                 <div data-hidden="hidden-color" class="tree scene3D__character">
                     <img src="assets/svg/character.svg" alt="">
                 </div>
@@ -86,12 +92,14 @@
         <div class="horizontal-section main-container">
           
             <svg class="hills" viewBox="0 0 800 400" preserveAspectRatio="none"> 
+                <g id="hill">
                 <path class="hill hill--brown" d="M0,300 Q200,100 400,300 T800,300 L800,400 L0,400 z"></path> <!-- Hill -->
                 <path class="hill hill--beige" d="M0,350 Q250,200 500,350 T800,350 L800,400 L0,400 Z"></path> <!-- Hill -->
-          
+            </g>
                  <!-- Flower -->
-                  <path class="stem" d="M200 80 Q198 350 200 30" stroke="#3b7d3f" stroke-width="4" fill="none"/> <!-- Stem -->
-                  <path class="leaf" d="M200 150 Q190 145 185 155 Q190 160 200 150 Z" fill="#4CAF50"/> <!-- Leaf -->
+                 <g id="flower">
+                  <path class="stem"d="M200 80 Q198 350 200 30" stroke="#3b7d3f" stroke-width="4" fill="none"/> <!-- Stem -->
+                  <path class="leaf"d="M200 150 Q190 145 185 155 Q190 160 200 150 Z" fill="#4CAF50"/> <!-- Leaf -->
                   <circle class="petal petal-0" cx="200" cy="50" r="10" fill="#FFD1DC"></circle> <!-- center -->
                   <circle class="petal petal-1" cx="200" cy="30" r="10" fill="#FFC8DC"></circle> <!-- Petal -->
                   <circle class="petal petal-2" cx="215" cy="35" r="10" fill="#FFD1DC"></circle> <!-- Petal -->
@@ -102,6 +110,7 @@
                   <circle class="petal petal-7" cx="180" cy="50" r="10" fill="#FFD1DC"></circle> <!-- Petal -->
                   <circle class="petal petal-8" cx="220" cy="50" r="10" fill="#FFD1DC"></circle> <!-- Petal -->
                   <circle class="center" cx="200" cy="50" r="6" fill="#FF69B4"></circle> <!-- flower center -->
+                 </g>
           </svg>
         </div>
   
@@ -144,7 +153,7 @@
 
   <section class="horizontal-scroll">
     <section class="football-section">
-      <div class="football-animation">
+      <div class="football-animation" id="footballfield">
           <img class="football_1" src="/assets/svg/footballfield.svg" alt="football field">
           <img class="football_2" src="/assets/svg/footballfield.svg" alt="football field">
           <img class="football_3" src="/assets/svg/footballfield.svg" alt="football field">
