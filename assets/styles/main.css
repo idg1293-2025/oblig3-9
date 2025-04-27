@@ -23,6 +23,10 @@ body::before, html::before {
   z-index: 0;
 }
 
+svg {
+  will-change: transform, opacity;
+}
+
 .main-container-wrapper {
   position: fixed;
 }
@@ -105,61 +109,67 @@ body::before, html::before {
   fill: #001f3f;
 }
 
-.hill--brown {
-  animation: expand-brown 10s ease-in-out forwards;
+.hill--brown.start-animation {
+  animation: expand-brown 6s ease-in-out forwards;
 }
 
 /* Flower */
-.petal, .stem, .leaf, .center {
-  animation: fall 10s ease-in-out forwards;
+#flower {
   position: absolute;
 }
 
-.petal-0 {
-  animation-delay: 6s;
+.petal.start-animation,
+.stem.start-animation,
+.leaf.start-animation,
+.center.start-animation {
+  animation: fall 10s ease-in-out forwards;
 }
 
-.petal-1 {
-  animation-delay: 6s;
+.petal-0.start-animation {
+  animation-delay: 2s;
 }
 
-.petal-2 {
-  animation-delay: 6s;
+.petal-1.start-animation {
+  animation-delay: 2s;
 }
 
-.petal-3 {
-  animation-delay: 6.5s;
+.petal-2.start-animation {
+  animation-delay: 3s;
 }
 
-.petal-4 {
-  animation-delay: 6.5s;
+.petal-3.start-animation {
+  animation-delay: 3.5s;
 }
 
-.petal-5 {
-  animation-delay: 5.5s;
+.petal-4.start-animation {
+  animation-delay: 3.5s;
 }
 
-.petal-6 {
-  animation-delay: 5.5s;
+.petal-5.start-animation {
+  animation-delay: 3.5s;
 }
 
-.petal-7 {
+.petal-6.start-animation {
+  animation-delay: 3.5s;
+}
+
+.petal-7.start-animation {
   animation-delay: 5.7s;
 }
 
-.petal-8 {
+.petal-8.start-animation {
   animation-delay: 5.7s;
 }
 
-.stem {
+.stem.start-animation {
   animation-delay: 5s;
 }
 
-.center {
+.center.start-animation {
   animation-delay: 6s;
 }
 
-.leaf {
+.leaf.start-animation {
   animation-delay: 7s;
 }
 
@@ -201,25 +211,25 @@ body::before, html::before {
   height: auto;
 }
 
-.football_1 {
+.football_1.start-animation {
   z-index: 3;
   position: absolute;
   animation: slide-left-1 6s ease-in-out 4s forwards;
 }
 
-.football_2 {
+.football_2.start-animation {
   z-index: 4;
   position: absolute;
   animation: slide-left-2 6s ease-in-out 5s forwards;
 }
 
-.football_3 {
+.football_3.start-animation {
   z-index: 5;
   position: absolute;
   animation: slide-left-3 6s ease-in-out 5s forwards;
 }
 
-.football_4 {
+.football_4.start-animation {
   z-index: 5;
   position: absolute;
   animation: slide-left-4 6s ease-in-out 5s forwards;
@@ -411,8 +421,8 @@ h2 {
 .scene3D__greentrees {
   position: absolute;
   left: 10%;
-  width: 80%;
-  padding-top: 5%;
+  width: 90%;
+  padding-top: 4%;
 }
 .scene3D__character {
   position: absolute;
@@ -420,11 +430,23 @@ h2 {
   width: 20%;
   padding-top: 40%;
 }
+.scene3D__stump {
+  position: absolute;
+  left: 61.5%;
+  width: 13.5%;
+  padding-top: 60%;
+}
+.scene3D__cut-tree {
+  position: absolute;
+  left: 57%;
+  width: 35%;
+  padding-top: 5%;
+}
 .scene3D__lumbers2 {
   position: absolute;
-  left: 25%;
+  left: 35%;
   width: 30%;
-  padding-top: 40%;
+  padding-top: 42%;
 }
 .scene3D__lumbers1 {
   position: absolute;
@@ -434,11 +456,31 @@ h2 {
 }
 .scene3D__construction-truck {
   position: absolute;
-  left: 50%;
+  left: 70%;
   width: 40%;
-  padding-top: 15%;
+  padding-top: 20%;
 }
 
+#cut-tree-animation {
+  display: block;
+  transform-origin: bottom center;
+}
+
+.start-animation {
+  animation: cut-tree 60s linear forwards;
+}
+
+@keyframes cut-tree {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(90deg); /* or -90deg to fall the other way */
+  }
+  100% {
+    transform: rotate(90deg); /* or -90deg to fall the other way */
+  }
+}
 @keyframes fall {
   0% {
     transform: translateY(0) rotate(0deg);

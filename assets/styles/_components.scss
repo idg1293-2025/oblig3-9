@@ -93,61 +93,67 @@
     }
 }
 
-.hill--brown {
-    animation: expand-brown 10s ease-in-out forwards; 
+.hill--brown.start-animation {
+    animation: expand-brown 6s ease-in-out forwards; 
 }
 
 /* Flower */
-.petal, .stem, .leaf, .center {
-    animation: fall 10s ease-in-out forwards;
+#flower {
     position: absolute; 
 }
 
-.petal-0 {
-    animation-delay: 6s;
+.petal.start-animation,
+.stem.start-animation,
+.leaf.start-animation,
+.center.start-animation  {
+    animation: fall 10s ease-in-out forwards;
 }
 
-.petal-1 {
-    animation-delay: 6s; 
+.petal-0.start-animation {
+    animation-delay: 2s;
 }
 
-.petal-2 {
-    animation-delay: 6s; 
+.petal-1.start-animation {
+    animation-delay: 2s; 
 }
 
-.petal-3 {
-    animation-delay: 6.5s; 
+.petal-2.start-animation {
+    animation-delay: 3s; 
 }
 
-.petal-4 {
-    animation-delay: 6.5s; 
+.petal-3.start-animation {
+    animation-delay: 3.5s; 
 }
 
-.petal-5 {
-    animation-delay: 5.5s; 
+.petal-4.start-animation {
+    animation-delay: 3.5s; 
 }
 
-.petal-6 {
-    animation-delay: 5.5s; 
+.petal-5.start-animation {
+    animation-delay: 3.5s; 
 }
 
-.petal-7 {
+.petal-6.start-animation {
+    animation-delay: 3.5s; 
+}
+
+.petal-7.start-animation {
     animation-delay: 5.7s; 
 }
 
-.petal-8 {
+.petal-8.start-animation{
     animation-delay: 5.7s; 
 }
 
-.stem {
+.stem.start-animation {
     animation-delay: 5s;
 }
 
-.center{
+.center.start-animation{
     animation-delay: 6s;
 }
 
-.leaf{
+.leaf.start-animation{
     animation-delay: 7s;
 }
 
@@ -191,29 +197,31 @@
     height: auto;
 }
 
-.football_1{
+.football_1.start-animation{
     z-index: 3;
     position: absolute;
     animation: slide-left-1 6s ease-in-out 4s forwards; 
 }
 
-.football_2{
+.football_2.start-animation{
     z-index: 4;
     position: absolute;
     animation: slide-left-2 6s ease-in-out 5s forwards; 
 }
 
-.football_3{
+.football_3.start-animation{
     z-index: 5;
     position: absolute;
     animation: slide-left-3 6s ease-in-out 5s forwards; 
 }
 
-.football_4{
+.football_4.start-animation{
     z-index: 5;
     position: absolute;
     animation: slide-left-4 6s ease-in-out 5s forwards; 
 }
+
+
 
 //City-line 
 
