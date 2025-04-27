@@ -39,6 +39,10 @@ body::before, html::before {
   position: relative;
 }
 
+.front-trees {
+  position: relative;
+}
+
 .container-text {
   position: relative;
   z-index: 2;
@@ -58,8 +62,8 @@ body::before, html::before {
 }
 
 .container-text.fade-out {
-  opacity: 0; /* Fade out */
-  transform: translateY(-50px); /* Slide up */
+  opacity: 0;
+  transform: translateY(-50px);
 }
 
 .horizontal-section {
@@ -95,14 +99,14 @@ body::before, html::before {
   fill: #c5ac99;
 }
 .hill--beige {
-  fill: #ab6e58;
+  fill: #514643;
 }
 .hill--blue {
   fill: #001f3f;
 }
 
 .hill--brown {
-  animation: expand-brown 6s ease-in-out forwards;
+  animation: expand-brown 10s ease-in-out forwards;
 }
 
 /* Flower */
@@ -112,31 +116,31 @@ body::before, html::before {
 }
 
 .petal-0 {
-  animation-delay: 2s;
+  animation-delay: 6s;
 }
 
 .petal-1 {
-  animation-delay: 2s;
+  animation-delay: 6s;
 }
 
 .petal-2 {
-  animation-delay: 3s;
+  animation-delay: 6s;
 }
 
 .petal-3 {
-  animation-delay: 3.5s;
+  animation-delay: 6.5s;
 }
 
 .petal-4 {
-  animation-delay: 3.5s;
+  animation-delay: 6.5s;
 }
 
 .petal-5 {
-  animation-delay: 3.5s;
+  animation-delay: 5.5s;
 }
 
 .petal-6 {
-  animation-delay: 3.5s;
+  animation-delay: 5.5s;
 }
 
 .petal-7 {
@@ -148,7 +152,7 @@ body::before, html::before {
 }
 
 .stem {
-  animation-delay: 6s;
+  animation-delay: 5s;
 }
 
 .center {
@@ -186,40 +190,39 @@ body::before, html::before {
 /* Football fields */
 .football-section {
   z-index: 2;
-  left: 42%;
-  position: absolute;
+  position: relative;
   width: 15vh;
   top: 40%;
+  left: -20%;
 }
 
 .football-section img {
   width: 110%;
   height: auto;
-  margin-top: -180px;
 }
 
 .football_1 {
   z-index: 3;
   position: absolute;
-  animation: slide-left-1 2s ease-in-out 2s forwards;
+  animation: slide-left-1 6s ease-in-out 4s forwards;
 }
 
 .football_2 {
   z-index: 4;
   position: absolute;
-  animation: slide-left-2 2s ease-in-out 3s forwards;
+  animation: slide-left-2 6s ease-in-out 5s forwards;
 }
 
 .football_3 {
   z-index: 5;
   position: absolute;
-  animation: slide-left-3 2s ease-in-out 3s forwards;
+  animation: slide-left-3 6s ease-in-out 5s forwards;
 }
 
 .football_4 {
   z-index: 5;
   position: absolute;
-  animation: slide-left-4 2s ease-in-out 3s forwards;
+  animation: slide-left-4 6s ease-in-out 5s forwards;
 }
 
 /* City Container */
@@ -248,25 +251,63 @@ body::before, html::before {
   max-width: 100%;
   max-height: 100%;
   width: 100%;
-  height: auto; /* Ensure it takes up full container height */
+  height: auto;
 }
 
 .cityscape {
   width: 100%;
   height: auto;
-  display: block; /* Make sure it's displayed correctly */
+  display: block;
 }
 
-/* Optional: If needed, set a background color to see the container */
 .city-container {
-  background-color: rgba(0, 0, 0, 0.05); /* Light background for visibility */
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Visible state - for when the city container is shown */
 .city-container.visible {
-  opacity: 1; /* Make it fully visible */
-  visibility: visible; /* Ensure it is visible */
-  transition: opacity 0.5s ease-in-out, visibility 0s 0s; /* Fade in and no delay on visibility */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0s;
+}
+
+.horizontal-2 {
+  position: fixed;
+  top: 20%;
+}
+
+.polar-bear-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  left: 590%;
+  align-items: center;
+  background: linear-gradient(#001f3f, #0074D9);
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.polar-text {
+  width: 600px;
+}
+
+.polar-bear-image {
+  width: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.snow {
+  position: relative;
+  pointer-events: none;
+  z-index: 10;
 }
 
 #content-forrest {
@@ -465,4 +506,35 @@ body::before, html::before {
     transform: translateX(-140%);
     opacity: 1;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+/* @keyframes shrinkIce {
+    0% {
+      width: 200px;
+      height: 100px;
+    }
+    100% {
+      width: 100px;
+      height: 50px;
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes sinkBear {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      transform: translateX(-50%) translateY(100px);
+      opacity: 0;
+    }
+  } */
+/*   @keyframes fall {
+    0% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(120vh);
+      opacity: 0;
+    }
+  } *//*# sourceMappingURL=main.css.map */

@@ -149,15 +149,15 @@ $(window).scroll(function () {
     frame.style.display = display;
   }
 
-  if (scrollMsg && yOffset > 200) {
+  if (scrollMsg && yOffset > 300) {
     scrollMsg.parentNode.removeChild(scrollMsg);
     scrollMsg = null;
   }
 
   if (yOffset > switchPoint) {
     var offsetX = (yOffset - switchPoint);
-    $('.horizontal-scroll').css('transform', 'translateX(' + (-offsetX) + 'px)');
+    $('.horizontal-scroll, .horizontal-2').css('transform', 'translateX(' + (-offsetX) + 'px)');
   } else {
-    $('.horizontal-scroll').css('transform', 'translateX(0)');
+    $('.horizontal-scroll, .horizontal-2').css('transform', 'translateX(0)');
   }
 });
