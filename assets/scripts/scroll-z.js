@@ -22,7 +22,7 @@ window.addEventListener('scroll', function () {
   const footballField = document.querySelectorAll('#footballfield .football_1, #footballfield .football_2, #footballfield .football_3, #footballfield .football_4')
 
   // === Tree animation trigger ===
-  if (currentScrollY > 1700 && lastScrollY <= 1800) {
+  if (currentScrollY > 1800 && lastScrollY <= 1800) {
     cutTree.classList.add('start-animation');
   } else if (currentScrollY < 1000 && lastScrollY >= 1000) {
     cutTree.classList.remove('start-animation');

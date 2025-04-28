@@ -11,6 +11,7 @@ body, html {
   text-align: center;
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 body::before, html::before {
   content: "";
@@ -29,6 +30,217 @@ body::before, html::before {
 
 svg {
   will-change: transform, opacity;
+}
+
+#content-forrest {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* if smaller content box is used and centering is needed: 
+    top:50%;
+    left:50%;
+  6  transform: translate(-50%, -50%);
+    */
+}
+
+.viewport {
+  perspective: 1000px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tree {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+}
+
+.tree img, .tree h1, .tree p {
+  display: block;
+}
+
+.scene3D {
+  transform-style: preserve-3d;
+}
+.scene3D__pinetree {
+  position: absolute;
+  left: 50%;
+  width: 80%;
+  padding-top: 35%;
+}
+.scene3D__tree9 {
+  position: absolute;
+  width: 130%;
+  left: 10%;
+}
+.scene3D__tree8 {
+  position: absolute;
+  width: 150%;
+  left: 10%;
+}
+.scene3D__tree7 {
+  position: absolute;
+  width: 50%;
+  left: -50%;
+}
+.scene3D__tree6 {
+  position: absolute;
+  width: 70%;
+  left: -40%;
+}
+.scene3D__tree3 {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+}
+.scene3D__tree2 {
+  position: absolute;
+  width: 50%;
+  left: -30%;
+}
+.scene3D__tree1 {
+  position: absolute;
+  width: 50%;
+}
+.scene3D__treeonhill {
+  position: absolute;
+  width: 100%;
+  left: 10%;
+  padding-top: 30%;
+}
+.scene3D__leaftree2 {
+  position: absolute;
+  width: 100%;
+  left: -68%;
+  padding-top: 6%;
+}
+.scene3D__tree8-2 {
+  position: absolute;
+  width: 50%;
+  left: 160%;
+  padding-top: 30%;
+}
+.scene3D__treecollection {
+  position: absolute;
+  width: 90%;
+  left: -10%;
+  padding-top: 40%;
+}
+.scene3D__ground {
+  position: absolute;
+  width: 600%;
+  left: -10%;
+  padding-top: 12%;
+}
+.scene3D__greentrees {
+  position: absolute;
+  left: 10%;
+  width: 90%;
+  padding-top: 4%;
+}
+.scene3D__character {
+  position: absolute;
+  left: 50%;
+  width: 20%;
+  padding-top: 40%;
+}
+.scene3D__stump {
+  position: absolute;
+  left: 61.5%;
+  width: 13.5%;
+  padding-top: 60%;
+}
+.scene3D__cut-tree {
+  position: absolute;
+  left: 57%;
+  width: 35%;
+  padding-top: 5%;
+}
+.scene3D__lumbers2 {
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  padding-top: 42%;
+}
+.scene3D__lumbers1 {
+  position: absolute;
+  left: 15%;
+  width: 35%;
+  padding-top: 40%;
+}
+.scene3D__construction-truck {
+  position: absolute;
+  left: 70%;
+  width: 40%;
+  padding-top: 20%;
+}
+
+.heading, .deforestation {
+  position: fixed;
+}
+
+h1 {
+  position: absolute;
+  font-size: 4rem;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  text-align: center;
+  color: #b9c79a;
+  padding-top: 25%;
+  left: -35%;
+}
+
+.deforestation {
+  position: fixed;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  width: 40%;
+  text-align: center;
+  display: inline;
+}
+
+.deforestation p {
+  position: absolute;
+  width: 100%;
+  left: 10%;
+  display: inline;
+}
+
+.heading, .deforestation {
+  position: fixed;
+}
+
+h1 {
+  position: absolute;
+  font-size: 4rem;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  text-align: center;
+  color: #b9c79a;
+  padding-top: 25%;
+  left: -35%;
+}
+
+.deforestation {
+  position: fixed;
+  font-size: 2rem;
+  line-height: 1.5;
+  height: 40%;
+  width: 70%;
+  text-align: center;
+  left: -30%;
+}
+
+.deforestation .tree {
+  position: relative;
+  width: 100%;
 }
 
 .main-container-wrapper {
@@ -64,7 +276,6 @@ svg {
   border-radius: 2rem;
   background-color: white;
   text-align: center;
-  font-family: sans-serif;
   opacity: 1;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -316,6 +527,19 @@ svg {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s ease-in-out, visibility 0s 0s;
+}
+
+#city-zoom {
+  transform-origin: center center;
+  position: fixed;
+  transform-origin: bottom;
+  perspective: 1000px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  padding-top: 10%;
+  overflow: hidden;
 }
 
 /* Last slide with text */
