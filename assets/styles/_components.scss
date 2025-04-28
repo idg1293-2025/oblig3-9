@@ -316,7 +316,7 @@
     position: relative;
     left: 590%;
     align-items: center;
-    background: linear-gradient(#001f3f, #0074D9);
+    background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
     color: white;
     border-radius: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -337,9 +337,102 @@ h2 {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.snow{
+.polar-bear__ice {
     position: relative;
+    width: 400px;
+    height: 200px;
+    background: #e0f7fa;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: shrinkIce 10s ease-in-out infinite;
+  }
+
+.polar-bear__img {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    opacity: 1;
+    animation: sinkBear 10s ease-in-out infinite;
+  }
+
+
+.polar-bear__source a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .bear-1 {
+    left: 15%;
+  }
+  .bear-2 {
+    left: 45%;
+  }
+  .bear-3 {
+    left: 75%;
+  }
+
+  
+  .visible .bear-1 {
+    animation: sinkBear 10s ease-in-out infinite;
+  }
+  .visible .bear-2 {
+    animation: sinkBear 10s ease-in-out 1s infinite;
+  }
+  .visible .bear-3 {
+    animation: sinkBear 10s ease-in-out 2s infinite;
+  }
+
+
+.visible {
+    opacity: 1;
+    transform: none;
+  }  
+
+.snow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none; 
     z-index: 10;
-}
+  }
+  
+  .flake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 1.2rem;
+    animation: fall linear infinite;
+    opacity: 0.8;
+  }
 
+  .flake:nth-child(1) {
+    left: 10%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+  }
+  .flake:nth-child(2) {
+    left: 30%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+  }
+  .flake:nth-child(3) {
+    left: 50%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+  }
+  
+  .flake:nth-child(4) {
+    left: 70%;
+    animation-duration: 9s;
+    animation-delay: 3s;
+  }
+  
+  .flake:nth-child(5) {
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 1.5s;
+  }
