@@ -1,0 +1,880 @@
+/* Vilde */
+/* SVG hills-color */
+/* SVG houses color */
+/* SVG windows color */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 7000px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body::before, html::before {
+  content: "";
+  position: fixed;
+  top: 0%;
+  right: -45%;
+  bottom: -70%;
+  left: -25%;
+  background-image: url("/assets/svg/forrestbackground.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 0;
+}
+
+svg {
+  will-change: transform, opacity;
+}
+
+#content-forrest {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.viewport {
+  perspective: 1000px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tree {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+}
+
+.tree img, .tree h1, .tree p {
+  display: block;
+}
+
+.scene3D {
+  transform-style: preserve-3d;
+}
+.scene3D__pinetree {
+  position: absolute;
+  left: 50%;
+  width: 80%;
+  padding-top: 30%;
+}
+.scene3D__tree9 {
+  position: absolute;
+  width: 130%;
+  left: 10%;
+}
+.scene3D__tree8 {
+  position: absolute;
+  width: 150%;
+  left: 10%;
+}
+.scene3D__tree7 {
+  position: absolute;
+  width: 50%;
+  left: -50%;
+}
+.scene3D__tree6 {
+  position: absolute;
+  width: 70%;
+  left: -40%;
+}
+.scene3D__tree3 {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+}
+.scene3D__tree2 {
+  position: absolute;
+  width: 50%;
+  left: -30%;
+}
+.scene3D__tree1 {
+  position: absolute;
+  width: 50%;
+}
+.scene3D__treeonhill {
+  position: absolute;
+  width: 100%;
+  left: 10%;
+  padding-top: 25%;
+}
+.scene3D__leaftree2 {
+  position: absolute;
+  width: 100%;
+  left: -68%;
+  padding-top: 1%;
+}
+.scene3D__tree8-2 {
+  position: absolute;
+  width: 50%;
+  left: 160%;
+  padding-top: 25%;
+}
+.scene3D__treecollection {
+  position: absolute;
+  width: 90%;
+  left: -10%;
+  padding-top: 35%;
+}
+.scene3D__ground {
+  position: absolute;
+  width: 600%;
+  left: -10%;
+  padding-top: 7%;
+}
+.scene3D__greentrees {
+  position: absolute;
+  left: 10%;
+  width: 90%;
+}
+.scene3D__character {
+  position: absolute;
+  left: 50%;
+  width: 20%;
+  padding-top: 40%;
+}
+.scene3D__stump {
+  position: absolute;
+  left: 61.5%;
+  width: 13.5%;
+  padding-top: 60%;
+}
+.scene3D__cut-tree {
+  position: absolute;
+  left: 57%;
+  width: 35%;
+  padding-top: 5%;
+}
+.scene3D__lumbers2 {
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  padding-top: 42%;
+}
+.scene3D__lumbers1 {
+  position: absolute;
+  left: 15%;
+  width: 35%;
+  padding-top: 40%;
+}
+.scene3D__construction-truck {
+  position: absolute;
+  left: 70%;
+  width: 40%;
+  padding-top: 20%;
+}
+
+.heading, .deforestation {
+  position: fixed;
+}
+
+h1 {
+  position: absolute;
+  font-size: 4rem;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  text-align: center;
+  color: #b9c79a;
+  padding-top: 25%;
+  left: -35%;
+}
+
+.deforestation {
+  position: fixed;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  width: 40%;
+  text-align: center;
+  display: inline;
+}
+
+.deforestation p {
+  position: absolute;
+  width: 100%;
+  left: 10%;
+  display: inline;
+}
+
+.heading, .deforestation {
+  position: fixed;
+}
+
+h1 {
+  position: absolute;
+  font-size: 4rem;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  text-align: center;
+  color: #b9c79a;
+  padding-top: 25%;
+  left: -35%;
+}
+
+.deforestation {
+  position: fixed;
+  font-size: 2rem;
+  line-height: 1.5;
+  height: 40%;
+  width: 70%;
+  text-align: center;
+  left: -30%;
+}
+
+.deforestation .tree {
+  position: relative;
+  width: 100%;
+}
+
+#cut-tree-animation {
+  display: block;
+  transform-origin: bottom center;
+}
+
+.start-animation {
+  animation: cut-tree 60s linear forwards;
+}
+
+.main-container-wrapper {
+  position: fixed;
+}
+
+.horizontal-scroll {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 45vh;
+  width: 100%;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  left: 130%;
+  position: relative;
+}
+
+.front-trees {
+  position: relative;
+}
+
+.container-text {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 100%;
+  padding: 10px 60px 20px 60px;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  background-color: white;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.container-text.fade-out {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.essential_text {
+  color: #29792a;
+  font-style: oblique;
+}
+
+.source_text {
+  color: #8b3632;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.horizontal-section {
+  position: relative;
+  grid-column: 1;
+  width: 100%;
+  height: 100%;
+  top: 60%;
+  border-radius: 2rem;
+  overflow: hidden;
+  flex: 0 0 100vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container-text,
+.city-container {
+  grid-column: 2;
+  grid-row: 1;
+  top: 60%;
+  position: absolute;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+/* SVG hill paths */
+.hills {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.hill--brown {
+  fill: #c5ac99;
+}
+.hill--beige {
+  fill: #514643;
+}
+.hill--blue {
+  fill: #001f3f;
+}
+
+.hill--brown.start-animation {
+  animation: expand-brown 6s ease-in-out forwards;
+}
+
+/* Flower */
+#flower {
+  position: absolute;
+}
+
+.petal.start-animation,
+.stem.start-animation,
+.leaf.start-animation,
+.center.start-animation {
+  animation: petalfall 10s ease-in-out forwards;
+  animation: petalfall 10s ease-in-out forwards;
+}
+
+.petal-0.start-animation {
+  animation-delay: 1s;
+}
+
+.petal-1.start-animation {
+  animation-delay: 2s;
+}
+
+.petal-2.start-animation {
+  animation-delay: 3.2s;
+}
+
+.petal-3.start-animation {
+  animation-delay: 3.5s;
+}
+
+.petal-4.start-animation {
+  animation-delay: 3.5s;
+}
+
+.petal-5.start-animation {
+  animation-delay: 3.5s;
+}
+
+.petal-6.start-animation {
+  animation-delay: 3.5s;
+}
+
+.petal-7.start-animation {
+  animation-delay: 4s;
+}
+
+.petal-8.start-animation {
+  animation-delay: 4s;
+}
+
+.stem.start-animation {
+  animation-delay: 3s;
+}
+
+.center.start-animation {
+  animation-delay: 3.8s;
+}
+
+.leaf.start-animation {
+  animation-delay: 4s;
+}
+
+/* SVG houses */
+.house-1 {
+  fill: #813f3f;
+}
+
+.house-2 {
+  fill: #b9c79a;
+}
+
+.house-3 {
+  fill: #778ca9;
+}
+
+.house-1-roof {
+  fill: #000000;
+}
+
+.house-2-roof {
+  fill: #000000;
+}
+
+.house-3-roof {
+  fill: #000000;
+}
+
+.dark_window {
+  fill: #000000;
+}
+
+.light_window {
+  fill: #d7bc58;
+}
+
+.building_1 {
+  fill: #2c3e50;
+}
+
+.building_2 {
+  fill: #2c3e50;
+}
+
+.building_3 {
+  fill: #2c3e50;
+}
+
+/* Football fields */
+.football-section {
+  z-index: 2;
+  position: relative;
+  width: 15vh;
+  top: 40%;
+  left: -20%;
+}
+
+.football-section img {
+  width: 110%;
+  height: auto;
+}
+
+.football_1.start-animation {
+  z-index: 3;
+  position: absolute;
+  animation: slide-left-1 6s ease-in-out 4s forwards;
+}
+
+.football_2.start-animation {
+  z-index: 4;
+  position: absolute;
+  animation: slide-left-2 6s ease-in-out 5s forwards;
+}
+
+.football_3.start-animation {
+  z-index: 5;
+  position: absolute;
+  animation: slide-left-3 6s ease-in-out 5s forwards;
+}
+
+.football_4.start-animation {
+  z-index: 5;
+  position: absolute;
+  animation: slide-left-4 6s ease-in-out 5s forwards;
+}
+
+/* Cityline */
+/* City Container */
+.city-container {
+  display: grid;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+}
+
+.main-container.show-city .container-text {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Cityline SVG */
+.city-line {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.cityscape {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.city-container {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.city-container.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0s;
+}
+
+#city-zoom {
+  transform-origin: center center;
+  position: fixed;
+  transform-origin: bottom;
+  perspective: 1000px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  padding-top: 10%;
+  overflow: hidden;
+}
+
+/* Last slide with text */
+.horizontal-3 {
+  position: fixed;
+  top: 20%;
+}
+
+.ending_text {
+  position: relative;
+  left: 950%;
+  box-sizing: border-box;
+  padding: 0px 30px 0px 30px;
+  height: auto;
+  font-family: sans-serif;
+  background-color: white;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.text_1,
+.text_3,
+.text_5 {
+  color: rgb(150, 30, 30);
+  font-weight: bold;
+}
+
+/* Bee */
+.beehive {
+  width: 20%;
+}
+
+.bee_1 {
+  position: relative;
+  z-index: 10;
+  animation: flyAcross 20s linear infinite;
+}
+
+.bee {
+  width: 15%;
+  position: relative;
+}
+
+/* Oleksandra polar bear */
+.horizontal-2 {
+  position: fixed;
+  top: 10%;
+}
+
+.polar-bear-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  left: 550%;
+  margin: auto;
+  align-items: center;
+  background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 120%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.polar-text {
+  width: 600px;
+  font-family: sans-serif;
+}
+
+.polar-bear-image {
+  width: 50%;
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+}
+
+.polar-bear__ice {
+  position: relative;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.polar-bear__ice-img {
+  height: auto;
+  opacity: 1;
+  animation: shrinkIce 10s ease-in-out infinite;
+}
+
+.polar-bear__img {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  opacity: 1;
+  animation: sinkBear 10s ease-in-out infinite;
+  z-index: 2;
+}
+
+.polar-bear__source a {
+  color: white;
+  text-decoration: underline;
+  font-family: sans-serif;
+}
+
+.bear-1 {
+  left: 15%;
+}
+
+.bear-2 {
+  left: 45%;
+}
+
+.bear-3 {
+  left: 75%;
+}
+
+.visible .bear-1 {
+  animation: sinkBear 10s ease-in-out 0s infinite;
+}
+
+.visible .bear-2 {
+  animation: sinkBear 10s ease-in-out 1s infinite;
+}
+
+.visible .bear-3 {
+  animation: sinkBear 10s ease-in-out 2s infinite;
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.snow {
+  position: relative;
+  pointer-events: none;
+  z-index: 10;
+  width: 100%;
+}
+
+.flake {
+  position: absolute;
+  top: -10px;
+  color: white;
+  font-size: 1.2rem;
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+.flake:nth-child(1) {
+  left: 10%;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+.flake:nth-child(2) {
+  left: 30%;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+
+.flake:nth-child(3) {
+  left: 50%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+.flake:nth-child(4) {
+  left: 70%;
+  animation-duration: 9s;
+  animation-delay: 3s;
+}
+
+.flake:nth-child(5) {
+  left: 90%;
+  animation-duration: 6s;
+  animation-delay: 1.5s;
+}
+
+/* Mona animations */
+@keyframes cut-tree {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+/* Vilde animations */
+@keyframes petalfall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(300px) rotate(360deg);
+    opacity: 0;
+  }
+}
+/* background SVG shapes */
+@keyframes expand-brown {
+  0% {
+    d: path("M0,300 Q200,100 400,300 T800,300 L800,400 L0,400 z"); /* Original path */
+  }
+  100% {
+    d: path("M0,0 Q200,0 400,0 T800,0 L800,400 L0,400 Z"); /* Expanded path covers the full background */
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* First football field */
+@keyframes slide-left-1 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-500%);
+    opacity: 1;
+  }
+}
+/* Second football field */
+@keyframes slide-left-2 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-380%);
+    opacity: 1;
+  }
+}
+/* Third football field */
+@keyframes slide-left-3 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-260%);
+    opacity: 1;
+  }
+}
+/* Forth football field */
+@keyframes slide-left-4 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-140%);
+    opacity: 1;
+  }
+}
+/* Bee animation */
+@keyframes flyAcross {
+  0% {
+    left: 300%;
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+  75% {
+    transform: translateY(-40px);
+  }
+  100% {
+    top: -40%;
+    left: 940%;
+    transform: translateY(-40px);
+  }
+}
+/* Oleksandra animations */
+@keyframes shrinkIce {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+@keyframes sinkBear {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+}
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}/*# sourceMappingURL=main.css.map */
