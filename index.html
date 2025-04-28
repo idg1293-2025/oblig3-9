@@ -55,10 +55,15 @@
                     <img src="assets/svg/leaftree2.svg" alt="">
 
                 </div>
+                <div data-hidden="hidden-color" class="tree scene3D__tree8-2">
+                    <img src="assets/svg/tree1.svg" alt="">
+
+                </div>
                 <div data-hidden="hidden-color" class="tree scene3D__tree8">
                     <img src="assets/svg/tree8.svg" alt="">
 
                 </div>
+
                 <div data-hidden="hidden-color" class="tree scene3D__tree7">
                     <img src="assets/svg/tree7.svg" alt="">
                     <img src="assets/svg/ground.svg" alt="" class="scene3D__ground">
@@ -121,9 +126,10 @@
         </p>
       </div>
   
-      <div class="city-container">
+      <div class="city-container" id="city-zoom">
             <div class="city-line">
-                <svg class="cityscape" viewBox="0 0 800 400" preserveAspectRatio="none">
+               
+                <svg class="cityscape .city" viewBox="0 0 800 400" preserveAspectRatio="none">
   
                     <!-- Hill -->
                     <path class="hill hill--blue" d="M0,300 Q200,100 300,200 T800,200 L800,400 L0,400 z"></path> <!-- Hill -->
@@ -148,7 +154,9 @@
                     <polygon class="house-roof house-3-roof" points="350,220 400,220 375,180"></polygon>
                 </svg>
             </div>
+            
         </div>
+
 
   <section class="horizontal-scroll">
       <!-- Football images -->
@@ -190,7 +198,6 @@
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="assets/scripts/scroll-z.js"></script>
     <script src="js/bear.js"></script>
 
 </body>
