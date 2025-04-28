@@ -157,6 +157,7 @@ left: -35%;
 .leaf.start-animation,
 .center.start-animation  {
     animation: petalfall 10s ease-in-out forwards;
+    animation: petalfall 10s ease-in-out forwards;
 }
 
 .petal-0.start-animation {
@@ -455,7 +456,6 @@ h2 {
   .polar-bear__ice-img {
     height: auto;
     opacity: 1;
-    height: auto;
     animation: shrinkIce 10s ease-in-out infinite;
   }
 
