@@ -1,3 +1,5 @@
+
+/* Mona new scripts with trigger animations */
 var perspective = 1000,
   zSpacing = -155,
   zVals = [],
@@ -22,7 +24,7 @@ window.addEventListener('scroll', function () {
   // === Tree animation trigger ===
   if (currentScrollY > 1700 && lastScrollY <= 1800) {
     cutTree.classList.add('start-animation');
-  } else if (currentScrollY < 1800 && lastScrollY >= 1800) {
+  } else if (currentScrollY < 1000 && lastScrollY >= 1000) {
     cutTree.classList.remove('start-animation');
   }
 
@@ -137,9 +139,9 @@ $(window).scroll(function () {
 
   if (yOffset > switchPoint) {
     var offsetX = (yOffset - switchPoint);
-    $('.horizontal-scroll').css('transform', 'translateX(' + (-offsetX) + 'px)');
+    $('.horizontal-scroll, .horizontal-2').css('transform', 'translateX(' + (-offsetX) + 'px)');
   } else {
-    $('.horizontal-scroll').css('transform', 'translateX(0)');
+    $('.horizontal- .horizontal-2').css('transform', 'translateX(0)');
   }
 });
 

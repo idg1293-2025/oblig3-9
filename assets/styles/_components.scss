@@ -47,6 +47,17 @@
     opacity: 0;                
     transform: translateY(-50px);  
 }
+
+.essential_text{
+    color: #29792a;
+    font-style: oblique;
+}
+
+.source_text{
+    color: #8b3632;
+    text-decoration: none;
+    font-size: 1rem;
+}
     
   //Gamle "shapes-container"
   .horizontal-section {
@@ -181,6 +192,26 @@
 
 .house-3-roof{
     fill: $color-house-roof--3;
+}
+
+.dark_window{
+    fill: $color-dark-window;
+}
+
+.light_window{
+    fill: $color-light-window;
+}
+
+.building_1{
+    fill: $color-building_1;
+}
+
+.building_2{
+    fill: $color-building_2;
+}
+
+.building_3{
+    fill: $color-building_3;
 }
 
 /* Football fields */

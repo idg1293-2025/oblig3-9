@@ -1,3 +1,7 @@
+/* Vilde */
+/* SVG hills-color */
+/* SVG houses color */
+/* SVG windows color */
 * {
   box-sizing: border-box;
 }
@@ -68,6 +72,17 @@ svg {
 .container-text.fade-out {
   opacity: 0;
   transform: translateY(-50px);
+}
+
+.essential_text {
+  color: #29792a;
+  font-style: oblique;
+}
+
+.source_text {
+  color: #8b3632;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 .horizontal-section {
@@ -195,6 +210,26 @@ svg {
 
 .house-3-roof {
   fill: #000000;
+}
+
+.dark_window {
+  fill: #000000;
+}
+
+.light_window {
+  fill: #d7bc58;
+}
+
+.building_1 {
+  fill: #2c3e50;
+}
+
+.building_2 {
+  fill: #2c3e50;
+}
+
+.building_3 {
+  fill: #2c3e50;
 }
 
 /* Football fields */
