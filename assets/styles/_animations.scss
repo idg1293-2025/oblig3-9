@@ -1,0 +1,142 @@
+@use "variables" as *;
+
+// MONA ANIMATIONS
+
+#cut-tree-animation {
+    display: block;
+    transform-origin: bottom center;
+   
+    }
+  //Javascript ads this class.
+   .start-animation {
+    animation: cut-tree 60s linear forwards;
+    }
+
+@keyframes cut-tree {
+    0% {
+        transform: rotate(0deg);
+      }
+      5% {
+        transform: rotate(90deg); /* or -90deg to fall the other way */
+      }
+      100% {
+        transform: rotate(90deg); /* or -90deg to fall the other way */
+      }
+    }
+
+//VILDE ANIMATIONS
+//petal animation
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg); 
+        opacity: 1; 
+    }
+    100% {
+        transform: translateY(300px) rotate(360deg); 
+        opacity: 0; 
+    }
+}
+
+//background svg
+@keyframes expand-brown {
+    0% {
+        d: path("M0,300 Q200,100 400,300 T800,300 L800,400 L0,400 z"); /* Original path */
+    }
+    100% {
+        d: path("M0,0 Q200,0 400,0 T800,0 L800,400 L0,400 Z"); /* Expanded path covers the full background */
+    }
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+//first football field
+@keyframes slide-left-1 {
+    0% {
+        transform: translateX(0); 
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-500%); 
+        opacity: 1;
+    }
+}
+
+//second football field
+@keyframes slide-left-2 {
+    0% {
+        transform: translateX(0); 
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-380%);
+        opacity: 1;
+    }
+}
+
+//third football field
+@keyframes slide-left-3 {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-260%); 
+        opacity: 1;
+    }
+}
+//fourth football field
+@keyframes slide-left-4 {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-140%); 
+        opacity: 1;
+    }
+}
+//VILDE ANIMATIONS ENDS HERE 
+
+
+
+
+
+
+
+
+//OLEKSANDRA ANIMATIONS 
+/* @keyframes shrinkIce {
+    0% {
+      width: 200px;
+      height: 100px;
+    }
+    100% {
+      width: 100px;
+      height: 50px;
+      opacity: 0.5;
+    }
+  }
+  
+  @keyframes sinkBear {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      transform: translateX(-50%) translateY(100px);
+      opacity: 0;
+    }
+  } */
+
+/*   @keyframes fall {
+    0% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(120vh);
+      opacity: 0;
+    }
+  } */

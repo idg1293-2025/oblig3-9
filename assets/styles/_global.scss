@@ -1,0 +1,34 @@
+@use "variables" as *;
+
+
+* {
+  box-sizing: border-box;
+}
+    
+body, html {
+  
+    height:7000px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+   
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0%;
+      right: -45%;
+      bottom: -70%;
+      left: -25%;
+      background-image: url("/assets/svg/forrestbackground.svg"); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      z-index: 0; 
+    }
+}
+
+svg {
+  will-change: transform, opacity;
+}

@@ -1,169 +1,617 @@
-.polar-bear {
+/* Vilde */
+/* SVG hills-color */
+/* SVG houses color */
+/* SVG windows color */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 7000px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+body::before, html::before {
+  content: "";
+  position: fixed;
+  top: 0%;
+  right: -45%;
+  bottom: -70%;
+  left: -25%;
+  background-image: url("/assets/svg/forrestbackground.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 0;
+}
+
+svg {
+  will-change: transform, opacity;
+}
+
+.main-container-wrapper {
+  position: fixed;
+}
+
+.horizontal-scroll {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 45vh;
+  width: 100%;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  left: 130%;
+  position: relative;
+}
+
+.front-trees {
+  position: relative;
+}
+
+.container-text {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 100%;
+  padding: 10px 60px 20px 60px;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  background-color: white;
+  text-align: center;
+  font-family: sans-serif;
+  opacity: 1;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.container-text.fade-out {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.essential_text {
+  color: #29792a;
+  font-style: oblique;
+}
+
+.source_text {
+  color: #8b3632;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.horizontal-section {
+  position: relative;
+  grid-column: 1;
+  width: 100%;
+  height: 100%;
+  top: 60%;
+  border-radius: 2rem;
+  overflow: hidden;
+  flex: 0 0 100vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container-text,
+.city-container {
+  grid-column: 2;
+  grid-row: 1;
+  top: 60%;
+  position: absolute;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.hills {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.hill--brown {
+  fill: #c5ac99;
+}
+.hill--beige {
+  fill: #514643;
+}
+.hill--blue {
+  fill: #001f3f;
+}
+
+.hill--brown.start-animation {
+  animation: expand-brown 6s ease-in-out forwards;
+}
+
+/* Flower */
+#flower {
+  position: absolute;
+}
+
+.petal.start-animation,
+.stem.start-animation,
+.leaf.start-animation,
+.center.start-animation {
+  animation: fall 10s ease-in-out forwards;
+}
+
+.petal-0.start-animation {
+  animation-delay: 2s;
+}
+
+.petal-1.start-animation {
+  animation-delay: 2s;
+}
+
+.petal-2.start-animation {
+  animation-delay: 3s;
+}
+
+.petal-3.start-animation {
+  animation-delay: 3.5s;
+}
+
+.petal-4.start-animation {
+  animation-delay: 3.5s;
+}
+
+.petal-5.start-animation {
+  animation-delay: 3.5s;
+}
+
+.petal-6.start-animation {
+  animation-delay: 3.5s;
+}
+
+.petal-7.start-animation {
+  animation-delay: 5.7s;
+}
+
+.petal-8.start-animation {
+  animation-delay: 5.7s;
+}
+
+.stem.start-animation {
+  animation-delay: 5s;
+}
+
+.center.start-animation {
+  animation-delay: 6s;
+}
+
+.leaf.start-animation {
+  animation-delay: 7s;
+}
+
+.house-1 {
+  fill: #813f3f;
+}
+
+.house-2 {
+  fill: #b9c79a;
+}
+
+.house-3 {
+  fill: #778ca9;
+}
+
+.house-1-roof {
+  fill: #000000;
+}
+
+.house-2-roof {
+  fill: #000000;
+}
+
+.house-3-roof {
+  fill: #000000;
+}
+
+.dark_window {
+  fill: #000000;
+}
+
+.light_window {
+  fill: #d7bc58;
+}
+
+.building_1 {
+  fill: #2c3e50;
+}
+
+.building_2 {
+  fill: #2c3e50;
+}
+
+.building_3 {
+  fill: #2c3e50;
+}
+
+/* Football fields */
+.football-section {
+  z-index: 2;
+  position: relative;
+  width: 15vh;
+  top: 40%;
+  left: -20%;
+}
+
+.football-section img {
+  width: 110%;
+  height: auto;
+}
+
+.football_1.start-animation {
+  z-index: 3;
+  position: absolute;
+  animation: slide-left-1 6s ease-in-out 4s forwards;
+}
+
+.football_2.start-animation {
+  z-index: 4;
+  position: absolute;
+  animation: slide-left-2 6s ease-in-out 5s forwards;
+}
+
+.football_3.start-animation {
+  z-index: 5;
+  position: absolute;
+  animation: slide-left-3 6s ease-in-out 5s forwards;
+}
+
+.football_4.start-animation {
+  z-index: 5;
+  position: absolute;
+  animation: slide-left-4 6s ease-in-out 5s forwards;
+}
+
+/* City Container */
+.city-container {
+  display: grid;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+}
+
+.main-container.show-city .container-text {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Cityline SVG */
+.city-line {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.cityscape {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.city-container {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.city-container.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0s;
+}
+
+.horizontal-2 {
+  position: fixed;
+  top: 20%;
+}
+
+.polar-bear-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
+  z-index: 2;
+  position: relative;
+  left: 590%;
+  align-items: center;
+  background: linear-gradient(#001f3f, #0074D9);
   color: white;
-  padding: 2rem 1rem;
-  min-height: 40vh;
-  max-width: 700px;
-  margin: 5rem auto;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-.polar-bear__title {
+
+h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
-.polar-bear__text {
-  max-width: 600px;
-  text-align: center;
-}
-.polar-bear__visual {
-  position: relative;
-  margin-top: 3rem;
-  height: 300px;
-}
-.polar-bear__ice {
-  position: relative;
-  width: 400px;
-  height: 200px;
-  background: #e0f7fa;
-  border-radius: 50%;
-  margin: 0 auto;
-  animation: shrinkIce 10s ease-in-out infinite;
-}
-.polar-bear__img {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  opacity: 1;
-  animation: sinkBear 7s ease-in-out infinite;
+
+.polar-text {
+  width: 600px;
 }
 
-.polar-bear__source a {
-  color: white;
-  text-decoration: underline;
-}
-
-@keyframes shrinkIce {
-  0% {
-    width: 400px;
-    height: 200px;
-    opacity: 1;
-  }
-  100% {
-    width: 200px;
-    height: 100px;
-    opacity: 0.5;
-  }
-}
-@keyframes sinkBear {
-  0% {
-    transform: translateX(-50%) translateY(0);
-  }
-  100% {
-    transform: translateX(-50%) translateY(100px);
-    opacity: 0;
-  }
-}
-.bear-1 {
-  left: 15%;
-}
-
-.bear-2 {
-  left: 45%;
-}
-
-.bear-3 {
-  left: 75%;
-}
-
-.visible.polar-bear__ice {
-  animation: shrinkIce 10s ease-in-out infinite;
-}
-
-.visible .bear-1 {
-  animation: sinkBear 10s ease-in-out infinite;
-}
-
-.visible .bear-2 {
-  animation: sinkBear 10s ease-in-out 1s infinite;
-}
-
-.visible .bear-3 {
-  animation: sinkBear 10s ease-in-out 2s infinite;
-}
-
-.hidden-right {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.visible {
-  opacity: 1;
-  transform: none;
+.polar-bear-image {
+  width: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .snow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: relative;
   pointer-events: none;
   z-index: 10;
 }
 
-.flake {
+#content-forrest {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* if smaller content box is used and centering is needed: 
+    top:50%;
+    left:50%;
+  6  transform: translate(-50%, -50%);
+    */
+}
+
+.viewport {
+  perspective: 1000px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tree {
   position: absolute;
-  top: -10px;
-  color: white;
-  font-size: 1.2rem;
-  animation: fall linear infinite;
-  opacity: 0.8;
+  width: 150%;
+  height: 150%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
 }
 
-.flake:nth-child(1) {
-  left: 10%;
-  animation-duration: 6s;
-  animation-delay: 2s;
+.tree img {
+  display: block;
 }
 
-.flake:nth-child(2) {
-  left: 30%;
-  animation-duration: 7s;
-  animation-delay: 1s;
+.scene3D {
+  transform-style: preserve-3d;
 }
-
-.flake:nth-child(3) {
+.scene3D__pinetree {
+  position: absolute;
   left: 50%;
-  animation-duration: 8s;
-  animation-delay: 0s;
+  width: 80%;
+  padding-top: 35%;
 }
-
-.flake:nth-child(4) {
+.scene3D__tree9 {
+  position: absolute;
+  width: 130%;
+  left: 10%;
+}
+.scene3D__tree8 {
+  position: absolute;
+  width: 150%;
+  left: 10%;
+}
+.scene3D__tree7 {
+  position: absolute;
+  width: 50%;
+  left: -50%;
+}
+.scene3D__tree6 {
+  position: absolute;
+  width: 70%;
+  left: -40%;
+}
+.scene3D__tree3 {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+}
+.scene3D__tree2 {
+  position: absolute;
+  width: 50%;
+  left: -30%;
+}
+.scene3D__tree1 {
+  position: absolute;
+  width: 50%;
+}
+.scene3D__treeonhill {
+  position: absolute;
+  width: 100%;
+  left: 10%;
+  padding-top: 30%;
+}
+.scene3D__leaftree2 {
+  position: absolute;
+  width: 100%;
+  left: -68%;
+  padding-top: 6%;
+}
+.scene3D__treecollection {
+  position: absolute;
+  width: 90%;
+  left: -10%;
+  padding-top: 40%;
+}
+.scene3D__ground {
+  width: 550%;
+}
+.scene3D__greentrees {
+  position: absolute;
+  left: 10%;
+  width: 90%;
+  padding-top: 4%;
+}
+.scene3D__character {
+  position: absolute;
+  left: 50%;
+  width: 20%;
+  padding-top: 40%;
+}
+.scene3D__stump {
+  position: absolute;
+  left: 61.5%;
+  width: 13.5%;
+  padding-top: 60%;
+}
+.scene3D__cut-tree {
+  position: absolute;
+  left: 57%;
+  width: 35%;
+  padding-top: 5%;
+}
+.scene3D__lumbers2 {
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  padding-top: 42%;
+}
+.scene3D__lumbers1 {
+  position: absolute;
+  left: 15%;
+  width: 35%;
+  padding-top: 40%;
+}
+.scene3D__construction-truck {
+  position: absolute;
   left: 70%;
-  animation-duration: 9s;
-  animation-delay: 3s;
+  width: 40%;
+  padding-top: 20%;
 }
 
-.flake:nth-child(5) {
-  left: 90%;
-  animation-duration: 6s;
-  animation-delay: 1.5s;
+#cut-tree-animation {
+  display: block;
+  transform-origin: bottom center;
 }
 
-@keyframes fall {
+.start-animation {
+  animation: cut-tree 60s linear forwards;
+}
+
+@keyframes cut-tree {
   0% {
-    transform: translateY(0);
-    opacity: 0.8;
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(90deg); /* or -90deg to fall the other way */
   }
   100% {
-    transform: translateY(120vh);
+    transform: rotate(90deg); /* or -90deg to fall the other way */
+  }
+}
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(300px) rotate(360deg);
     opacity: 0;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+@keyframes expand-brown {
+  0% {
+    d: path("M0,300 Q200,100 400,300 T800,300 L800,400 L0,400 z"); /* Original path */
+  }
+  100% {
+    d: path("M0,0 Q200,0 400,0 T800,0 L800,400 L0,400 Z"); /* Expanded path covers the full background */
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide-left-1 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-500%);
+    opacity: 1;
+  }
+}
+@keyframes slide-left-2 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-380%);
+    opacity: 1;
+  }
+}
+@keyframes slide-left-3 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-260%);
+    opacity: 1;
+  }
+}
+@keyframes slide-left-4 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-140%);
+    opacity: 1;
+  }
+}
+/* @keyframes shrinkIce {
+    0% {
+      width: 200px;
+      height: 100px;
+    }
+    100% {
+      width: 100px;
+      height: 50px;
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes sinkBear {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      transform: translateX(-50%) translateY(100px);
+      opacity: 0;
+    }
+  } */
+/*   @keyframes fall {
+    0% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(120vh);
+      opacity: 0;
+    }
+  } *//*# sourceMappingURL=main.css.map */

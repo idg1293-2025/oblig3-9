@@ -1,186 +1,345 @@
+@use "variables" as *;
 
 
 
+// VILDE CSS 
+//ny container
+.main-container-wrapper {
+    position: fixed;
+  }
+
+  //gamle "main-container"
+  .horizontal-scroll {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 45vh;
+    width: 100%; 
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    left: 130%;
+    position: relative;
+  }
+
+  .front-trees{
+    position: relative;
+  }
+  
+  .container-text{
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 100%;
+    width: 100%;
+    padding: 10px 60px 20px 60px;
+    box-sizing: border-box;
+    border-radius: $border-radius;
+    background-color: white;
+    text-align: center;
+    font-family: sans-serif;
+    opacity: 1;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.container-text.fade-out {
+    opacity: 0;                
+    transform: translateY(-50px);  
+}
+
+.essential_text{
+    color: #29792a;
+    font-style: oblique;
+}
+
+.source_text{
+    color: #8b3632;
+    text-decoration: none;
+    font-size: 1rem;
+}
+    
+  //Gamle "shapes-container"
+  .horizontal-section {
+    position: relative;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    top: 60%;
+    border-radius: $border-radius;
+    overflow: hidden;
+    flex: 0 0 100vw;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .container-text,
+  .city-container{
+    grid-column: 2;
+    grid-row: 1;
+    top: 60%;
+    position: absolute;
+    height: 100%;
+    transition: opacity 0.5s ease;
+  }
+
+//SVG hill shapes   
+.hills{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.hill{
+    &--brown{
+        fill: $color-hill--beige;
+    }
+
+    &--beige{
+        fill: $color-hill--brown;
+    }
+
+    &--blue{
+        fill: $color-hill--blue;
+    }
+}
+
+.hill--brown.start-animation {
+    animation: expand-brown 6s ease-in-out forwards; 
+}
+
+/* Flower */
+#flower {
+    position: absolute; 
+}
+
+.petal.start-animation,
+.stem.start-animation,
+.leaf.start-animation,
+.center.start-animation  {
+    animation: fall 10s ease-in-out forwards;
+}
+
+.petal-0.start-animation {
+    animation-delay: 2s;
+}
+
+.petal-1.start-animation {
+    animation-delay: 2s; 
+}
+
+.petal-2.start-animation {
+    animation-delay: 3s; 
+}
+
+.petal-3.start-animation {
+    animation-delay: 3.5s; 
+}
+
+.petal-4.start-animation {
+    animation-delay: 3.5s; 
+}
+
+.petal-5.start-animation {
+    animation-delay: 3.5s; 
+}
+
+.petal-6.start-animation {
+    animation-delay: 3.5s; 
+}
+
+.petal-7.start-animation {
+    animation-delay: 5.7s; 
+}
+
+.petal-8.start-animation{
+    animation-delay: 5.7s; 
+}
+
+.stem.start-animation {
+    animation-delay: 5s;
+}
+
+.center.start-animation{
+    animation-delay: 6s;
+}
+
+.leaf.start-animation{
+    animation-delay: 7s;
+}
+
+//SVG HOUSES 
+.house-1{
+    fill:$color-house--1;
+}    
+
+.house-2{
+    fill: $color-house--2;
+}
+
+.house-3{
+    fill: $color-house--3;
+}
+
+
+.house-1-roof{
+    fill: $color-house-roof--1;
+}
+
+.house-2-roof{
+    fill: $color-house-roof--2;
+}
+
+.house-3-roof{
+    fill: $color-house-roof--3;
+}
+
+.dark_window{
+    fill: $color-dark-window;
+}
+
+.light_window{
+    fill: $color-light-window;
+}
+
+.building_1{
+    fill: $color-building_1;
+}
+
+.building_2{
+    fill: $color-building_2;
+}
+
+.building_3{
+    fill: $color-building_3;
+}
+
+/* Football fields */
+.football-section{
+    z-index: 2;
+    position: relative;
+    width: 15vh;
+    top: 40%;
+    left: -20%;
+}
+
+.football-section img{
+    width: 110%;
+    height: auto;
+}
+
+.football_1.start-animation{
+    z-index: 3;
+    position: absolute;
+    animation: slide-left-1 6s ease-in-out 4s forwards; 
+}
+
+.football_2.start-animation{
+    z-index: 4;
+    position: absolute;
+    animation: slide-left-2 6s ease-in-out 5s forwards; 
+}
+
+.football_3.start-animation{
+    z-index: 5;
+    position: absolute;
+    animation: slide-left-3 6s ease-in-out 5s forwards; 
+}
+
+.football_4.start-animation{
+    z-index: 5;
+    position: absolute;
+    animation: slide-left-4 6s ease-in-out 5s forwards; 
+}
 
 
 
+//City-line 
 
-//polar-bear animation block
+/* City Container */
+.city-container {
+    display: grid;
+    align-items: center;
+    z-index: 10; 
+    width: 100%;
+    height: 100%; 
+    border-radius: $border-radius;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+}
 
-.polar-bear {
+.main-container.show-city .container-text{
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Cityline SVG */
+.city-line {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: auto; 
+}
+
+.cityscape {
+    width: 100%;
+    height: auto;
+    display: block; 
+}
+
+
+.city-container {
+    background-color: rgba(0, 0, 0, 0.05); 
+}
+
+.city-container.visible {
+    opacity: 1;  
+    visibility: visible; 
+    transition: opacity 0.5s ease-in-out, visibility 0s 0s; 
+}
+
+//Oleksandra polar bear
+.horizontal-2{
+    position: fixed;
+    top: 20%;
+}
+
+.polar-bear-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
+    z-index: 2;
+    position: relative;
+    left: 590%;
+    align-items: center;
+    background: linear-gradient(#001f3f, #0074D9);
     color: white;
-    padding: 2rem 1rem;
-    min-height: 40vh;
-    max-width: 700px;
-    margin: 5rem auto;
     border-radius: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
 
-    &__title {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-  
-    &__text {
-      max-width: 600px;
-      text-align: center;
-    }
-  
-    &__visual {
-      position: relative;
-      margin-top: 3rem;
-      height: 300px;
-    }
-  
-    &__ice {
-      position: relative;
-      width: 400px;
-      height: 200px;
-      background: #e0f7fa;
-      border-radius: 50%;
-      margin: 0 auto;
-      animation: shrinkIce 10s ease-in-out infinite;
-    }
-  
-    &__img {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      opacity: 1;
-      animation: sinkBear 7s ease-in-out infinite;
-    }
-  }
+.polar-text{
+    width: 600px;
+}
 
-  .polar-bear__source a {
-    color: white;
-    text-decoration: underline;
-  }
-  // Ice animation
-  @keyframes shrinkIce {
-    0% {
-      width: 400px;
-      height: 200px;
-      opacity: 1;
-    }
-    100% {
-      width: 200px;
-      height: 100px;
-      opacity: 0.5;
-    }
-  }
-  // Bear animation
-  @keyframes sinkBear {
-    0% {
-      transform: translateX(-50%) translateY(0);
-    }
-    100% {
-      transform: translateX(-50%) translateY(100px);
-      opacity: 0;
-    }
-  }
+.polar-bear-image{
+    width: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
-  
-
- 
-  .bear-1 {
-    left: 15%;
-  }
-  .bear-2 {
-    left: 45%;
-  }
-  .bear-3 {
-    left: 75%;
-  }
-
-  .visible.polar-bear__ice {
-    animation: shrinkIce 10s ease-in-out infinite;
-  }
-  
-
-
-  .visible .bear-1 {
-    animation: sinkBear 10s ease-in-out infinite;
-  }
-  .visible .bear-2 {
-    animation: sinkBear 10s ease-in-out 1s infinite;
-  }
-  .visible .bear-3 {
-    animation: sinkBear 10s ease-in-out 2s infinite;
-  }
-  .hidden-right {
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-  
-  .visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  .snow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.snow{
+    position: relative;
     pointer-events: none; 
     z-index: 10;
-  }
-  
-  .flake {
-    position: absolute;
-    top: -10px;
-    color: white;
-    font-size: 1.2rem;
-    animation: fall linear infinite;
-    opacity: 0.8;
-  }
-  
- 
-  .flake:nth-child(1) {
-    left: 10%;
-    animation-duration: 6s;
-    animation-delay: 2s;
-  }
-  .flake:nth-child(2) {
-    left: 30%;
-    animation-duration: 7s;
-    animation-delay: 1s;
-  }
-  .flake:nth-child(3) {
-    left: 50%;
-    animation-duration: 8s;
-    animation-delay: 0s;
-  }
-  
-  .flake:nth-child(4) {
-    left: 70%;
-    animation-duration: 9s;
-    animation-delay: 3s;
-  }
+}
 
-  .flake:nth-child(5) {
-    left: 90%;
-    animation-duration: 6s;
-    animation-delay: 1.5s;
-  }
-  
-  
-  @keyframes fall {
-    0% {
-      transform: translateY(0);
-      opacity: 0.8;
-    }
-    100% {
-      transform: translateY(120vh);
-      opacity: 0;
-    }
-  }

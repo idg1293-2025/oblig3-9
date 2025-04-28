@@ -1,0 +1,161 @@
+@use "variables" as *;#content-forrest {
+    position:fixed; 
+    top:0%;
+    left:0;
+    width:100%;
+    height:100%;
+    /* if smaller content box is used and centering is needed: 
+    top:50%;
+    left:50%;
+  6  transform: translate(-50%, -50%);
+    */
+}
+
+.viewport {
+  perspective: 1000px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.tree{
+  position:absolute;
+  width:150%;
+  height:150%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+}
+
+.tree img {
+  display: block;
+}
+
+.scene3D {
+  transform-style: preserve-3d;
+
+  &__pinetree {
+   position: absolute;
+   left: 50%;
+   width: 80%;
+ padding-top: 35%;
+  }
+
+  &__tree9 {
+    position: absolute;
+    width: 130%;
+    left: 10%;
+  }
+
+  &__tree8 {
+    position: absolute;
+    width: 150%;
+    left: 10%;
+  }
+
+  &__tree7 {
+    position: absolute;
+    width: 50%;
+    left: -50%;
+  }
+
+  &__tree6 {
+    position: absolute;
+    width: 70%;
+    left: -40%;
+  }
+
+  &__tree3 {
+    position: absolute;
+    width: 50%;
+    left:50%
+  }
+
+  &__tree2 {
+    position: absolute;
+    width: 50%;
+    left: -30%;
+  }
+
+  &__tree1 {
+    position: absolute;
+    width: 50%;
+  }
+ 
+  &__treeonhill {
+    position: absolute;
+    width: 100%;
+    left: 10%;
+    padding-top: 30%;
+  }
+
+  &__leaftree2 {
+    position: absolute;
+    width: 100%;
+    left: -68%;
+  padding-top: 6%;
+  }
+ 
+  &__treecollection {
+  position: absolute;
+  width: 90%;
+  left: -10%;
+  padding-top: 40%;
+}
+
+&__ground {
+  width: 550%;
+}
+
+&__greentrees {
+  position: absolute;
+left: 10%;
+  width: 90%;
+  padding-top: 4%;
+}
+
+&__character {
+  position: absolute;
+left: 50%;
+  width: 20%;
+  padding-top: 40%;
+}
+
+&__stump {
+  position: absolute;
+left: 61.5%;
+  width: 13.5%;
+  padding-top: 60%;
+}
+
+&__cut-tree {
+  position: absolute;
+left: 57%;
+  width: 35%;
+ padding-top: 5%;
+}
+
+&__lumbers2 {
+  position: absolute;
+left: 35%;
+  width: 30%;
+  padding-top: 42%;
+}
+
+&__lumbers1 {
+  position: absolute;
+left: 15%;
+  width: 35%;
+
+  padding-top: 40%;
+}
+
+&__construction-truck {
+  position: absolute;
+left: 70%;
+  width: 40%;
+  padding-top: 20%;
+}
+}
+
