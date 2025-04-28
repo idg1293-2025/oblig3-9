@@ -1,5 +1,19 @@
+<<<<<<< Updated upstream
 body {
   background: rgb(223, 244, 232);
+=======
+/* Vilde */
+/* SVG hills-color */
+/* SVG houses color */
+/* SVG windows color */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 7000px;
+  text-align: center;
+>>>>>>> Stashed changes
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -25,7 +39,7 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   height: 100%;
   width: 100%;
-  padding: 20px;
+  padding: 10px 60px 20px 60px;
   box-sizing: border-box;
   border-radius: 2rem;
   background-color: white;
@@ -40,7 +54,22 @@ body {
   transform: translateY(-50px); /* Slide up */
 }
 
+<<<<<<< Updated upstream
 .shapes-container {
+=======
+.essential_text {
+  color: #29792a;
+  font-style: oblique;
+}
+
+.source_text {
+  color: #8b3632;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.horizontal-section {
+>>>>>>> Stashed changes
   position: relative;
   grid-column: 1;
   width: 100%;
@@ -101,6 +130,26 @@ body {
 
 .house-3-roof {
   fill: #000000;
+}
+
+.dark_window {
+  fill: #000000;
+}
+
+.light_window {
+  fill: #d7bc58;
+}
+
+.building_1 {
+  fill: #2c3e50;
+}
+
+.building_2 {
+  fill: #2c3e50;
+}
+
+.building_3 {
+  fill: #2c3e50;
 }
 
 /* Football fields */
