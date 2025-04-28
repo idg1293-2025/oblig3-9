@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(#001f3f, #0074D9);
+  background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
   color: white;
   padding: 2rem 1rem;
   min-height: 40vh;
@@ -26,20 +26,21 @@
 }
 .polar-bear__ice {
   position: relative;
-  width: 200px;
-  height: 100px;
+  width: 400px;
+  height: 200px;
   background: #e0f7fa;
   border-radius: 50%;
-  animation: shrinkIce 7s ease-in-out forwards;
+  margin: 0 auto;
+  animation: shrinkIce 10s ease-in-out infinite;
 }
 .polar-bear__img {
   position: absolute;
-  bottom: 30px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  opacity: 0;
-  animation: sinkBear 7s ease-in-out forwards;
+  width: 120px;
+  opacity: 1;
+  animation: sinkBear 7s ease-in-out infinite;
 }
 
 .polar-bear__source a {
@@ -49,12 +50,13 @@
 
 @keyframes shrinkIce {
   0% {
-    width: 200px;
-    height: 100px;
+    width: 400px;
+    height: 200px;
+    opacity: 1;
   }
   100% {
-    width: 100px;
-    height: 50px;
+    width: 200px;
+    height: 100px;
     opacity: 0.5;
   }
 }
@@ -67,25 +69,8 @@
     opacity: 0;
   }
 }
-.polar-bear__ice {
-  position: relative;
-  width: 250px;
-  height: 150px;
-  background: #e0f7fa;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-.polar-bear__img {
-  position: absolute;
-  bottom: 30px;
-  width: 60px;
-  opacity: 1;
-  animation: none;
-}
-
 .bear-1 {
-  left: 10%;
+  left: 15%;
 }
 
 .bear-2 {
@@ -97,23 +82,19 @@
 }
 
 .visible.polar-bear__ice {
-  animation: shrinkIce 7s ease-in-out forwards;
-}
-
-.visible.polar-bear__img {
-  animation: sinkBear 7s ease-in-out forwards;
+  animation: shrinkIce 10s ease-in-out infinite;
 }
 
 .visible .bear-1 {
-  animation: sinkBear 4s ease-in-out 0s forwards;
+  animation: sinkBear 10s ease-in-out infinite;
 }
 
 .visible .bear-2 {
-  animation: sinkBear 4s ease-in-out 1.5s forwards;
+  animation: sinkBear 10s ease-in-out 1s infinite;
 }
 
 .visible .bear-3 {
-  animation: sinkBear 4s ease-in-out 3s forwards;
+  animation: sinkBear 10s ease-in-out 2s infinite;
 }
 
 .hidden-right {
@@ -147,21 +128,33 @@
 }
 
 .flake:nth-child(1) {
-  left: 20%;
+  left: 10%;
   animation-duration: 6s;
   animation-delay: 2s;
 }
 
 .flake:nth-child(2) {
+  left: 30%;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+
+.flake:nth-child(3) {
   left: 50%;
   animation-duration: 8s;
   animation-delay: 0s;
 }
 
-.flake:nth-child(3) {
-  left: 80%;
-  animation-duration: 7s;
-  animation-delay: 2s;
+.flake:nth-child(4) {
+  left: 70%;
+  animation-duration: 9s;
+  animation-delay: 3s;
+}
+
+.flake:nth-child(5) {
+  left: 90%;
+  animation-duration: 6s;
+  animation-delay: 1.5s;
 }
 
 @keyframes fall {
