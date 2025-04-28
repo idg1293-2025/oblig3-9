@@ -1,25 +1,16 @@
 @use "variables" as *;
 
 /* Mona animations */
-#cut-tree-animation {
-    display: block;
-    transform-origin: bottom center;
-   
-    }
-  //Javascript ads this class.
-   .start-animation {
-    animation: cut-tree 60s linear forwards;
-    }
 
 @keyframes cut-tree {
     0% {
         transform: rotate(0deg);
       }
       5% {
-        transform: rotate(90deg); /* or -90deg to fall the other way */
+        transform: rotate(90deg); 
       }
       100% {
-        transform: rotate(90deg); /* or -90deg to fall the other way */
+        transform: rotate(90deg); 
       }
     }
 

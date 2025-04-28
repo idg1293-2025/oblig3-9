@@ -1,5 +1,7 @@
 @use "variables" as *;
 
+
+//MONA
 .heading, .deforestation {
     position: fixed;
 }
@@ -31,7 +33,15 @@ left: -35%;
     }
 
 
+    #cut-tree-animation {
+        display: block;
+        transform-origin: bottom center;
+       
+        }
 
+       .start-animation {
+        animation: cut-tree 60s linear forwards;
+        }
 
 
 // VILDE CSS 
