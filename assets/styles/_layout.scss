@@ -28,7 +28,7 @@
   transform-origin: bottom;
 }
 
-.tree img {
+.tree img, .tree h1, .tree p {
   display: block;
 }
 
@@ -96,6 +96,13 @@
     left: -68%;
   padding-top: 6%;
   }
+
+  &__tree8-2 {
+    position: absolute;
+    width: 50%;
+    left: 160%;
+    padding-top: 30%;
+  }
  
   &__treecollection {
   position: absolute;
@@ -105,7 +112,11 @@
 }
 
 &__ground {
-  width: 550%;
+  position: absolute;
+  width: 600%;
+  left: -10%;
+  padding-top: 12%;
+
 }
 
 &__greentrees {
@@ -158,4 +169,32 @@ left: 70%;
   padding-top: 20%;
 }
 }
+.heading, .deforestation {
+  position: fixed;
+}
+h1{ 
+  position: absolute;
+  font-size: 4rem;
+  box-sizing: border-box;
+  border-radius: $border-radius;
+  text-align: center;
+color: $color-house--2;
+padding-top: 25%;
+left: -35%;
+}
 
+.deforestation {
+      position: fixed;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      width: 40%;
+      text-align: center;
+      display: inline;
+}
+
+.deforestation p{
+  position: absolute;
+  width: 100%;
+  left: 10%;
+  display: inline;
+  }
