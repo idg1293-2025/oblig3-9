@@ -326,8 +326,7 @@ svg {
   align-items: center;
   z-index: 2;
   position: relative;
-  left: 590%;
-  align-items: center;
+  left: 250%;
   background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
   color: white;
   border-radius: 1rem;
@@ -353,10 +352,19 @@ h2 {
   position: relative;
   width: 400px;
   height: 200px;
-  background: #e0f7fa;
   border-radius: 50%;
   margin: 0 auto;
   animation: shrinkIce 10s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.polar-bear__ice-img {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: all 10s ease-in-out;
 }
 
 .polar-bear__img {
@@ -683,13 +691,11 @@ h2 {
 }
 @keyframes shrinkIce {
   0% {
-    width: 400px;
-    height: 200px;
+    transform: scale(1);
     opacity: 1;
   }
   100% {
-    width: 200px;
-    height: 100px;
+    transform: scale(0.5);
     opacity: 0.5;
   }
 }
