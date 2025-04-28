@@ -59,7 +59,7 @@ svg {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   height: 100%;
   width: 100%;
-  padding: 20px;
+  padding: 10px 60px 20px 60px;
   box-sizing: border-box;
   border-radius: 2rem;
   background-color: white;
