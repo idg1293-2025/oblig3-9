@@ -107,6 +107,7 @@ svg {
   transition: opacity 0.5s ease;
 }
 
+/* SVG hill paths */
 .hills {
   width: 100%;
   height: 100%;
@@ -141,7 +142,7 @@ svg {
 }
 
 .petal-0.start-animation {
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 .petal-1.start-animation {
@@ -149,7 +150,7 @@ svg {
 }
 
 .petal-2.start-animation {
-  animation-delay: 3s;
+  animation-delay: 3.2s;
 }
 
 .petal-3.start-animation {
@@ -169,25 +170,26 @@ svg {
 }
 
 .petal-7.start-animation {
-  animation-delay: 5.7s;
+  animation-delay: 4s;
 }
 
 .petal-8.start-animation {
-  animation-delay: 5.7s;
+  animation-delay: 4s;
 }
 
 .stem.start-animation {
-  animation-delay: 5s;
+  animation-delay: 3s;
 }
 
 .center.start-animation {
-  animation-delay: 6s;
+  animation-delay: 3.8s;
 }
 
 .leaf.start-animation {
-  animation-delay: 7s;
+  animation-delay: 4s;
 }
 
+/* SVG houses */
 .house-1 {
   fill: #813f3f;
 }
@@ -270,6 +272,7 @@ svg {
   animation: slide-left-4 6s ease-in-out 5s forwards;
 }
 
+/* Cityline */
 /* City Container */
 .city-container {
   display: grid;
@@ -315,6 +318,49 @@ svg {
   transition: opacity 0.5s ease-in-out, visibility 0s 0s;
 }
 
+/* Last slide with text */
+.horizontal-3 {
+  position: fixed;
+  top: 20%;
+}
+
+.ending_text {
+  position: relative;
+  left: 950%;
+  box-sizing: border-box;
+  padding: 0px 30px 0px 30px;
+  height: auto;
+  font-family: sans-serif;
+  background-color: white;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.text_1,
+.text_3,
+.text_5 {
+  color: rgb(150, 30, 30);
+  font-weight: bold;
+}
+
+/* Bee */
+.beehive {
+  width: 20%;
+}
+
+.bee_1 {
+  position: relative;
+  z-index: 10;
+  animation: flyAcross 20s linear infinite;
+}
+
+.bee {
+  width: 15%;
+  position: relative;
+}
+
+/* Oleksandra polar bear */
 .horizontal-2 {
   position: fixed;
   top: 20%;
@@ -496,6 +542,7 @@ h2 {
   padding-top: 20%;
 }
 
+/* Mona animations */
 #cut-tree-animation {
   display: block;
   transform-origin: bottom center;
@@ -516,6 +563,7 @@ h2 {
     transform: rotate(90deg); /* or -90deg to fall the other way */
   }
 }
+/* Vilde animations */
 @keyframes fall {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -526,6 +574,7 @@ h2 {
     opacity: 0;
   }
 }
+/* background SVG shapes */
 @keyframes expand-brown {
   0% {
     d: path("M0,300 Q200,100 400,300 T800,300 L800,400 L0,400 z"); /* Original path */
@@ -544,6 +593,7 @@ h2 {
     transform: translateY(0);
   }
 }
+/* First football field */
 @keyframes slide-left-1 {
   0% {
     transform: translateX(0);
@@ -554,6 +604,7 @@ h2 {
     opacity: 1;
   }
 }
+/* Second football field */
 @keyframes slide-left-2 {
   0% {
     transform: translateX(0);
@@ -564,6 +615,7 @@ h2 {
     opacity: 1;
   }
 }
+/* Third football field */
 @keyframes slide-left-3 {
   0% {
     transform: translateX(0);
@@ -574,6 +626,7 @@ h2 {
     opacity: 1;
   }
 }
+/* Forth football field */
 @keyframes slide-left-4 {
   0% {
     transform: translateX(0);
@@ -584,34 +637,25 @@ h2 {
     opacity: 1;
   }
 }
-/* @keyframes shrinkIce {
-    0% {
-      width: 200px;
-      height: 100px;
-    }
-    100% {
-      width: 100px;
-      height: 50px;
-      opacity: 0.5;
-    }
+/* Bee animation */
+@keyframes flyAcross {
+  0% {
+    left: 300%;
+    transform: translateY(0);
   }
-
-  @keyframes sinkBear {
-    0% {
-      transform: translateX(-50%) translateY(0);
-    }
-    100% {
-      transform: translateX(-50%) translateY(100px);
-      opacity: 0;
-    }
-  } */
-/*   @keyframes fall {
-    0% {
-      transform: translateY(0);
-      opacity: 0.8;
-    }
-    100% {
-      transform: translateY(120vh);
-      opacity: 0;
-    }
-  } *//*# sourceMappingURL=main.css.map */
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+  75% {
+    transform: translateY(-40px);
+  }
+  100% {
+    top: -40%;
+    left: 940%;
+    transform: translateY(-40px);
+  }
+}
+/* Oleksandra animations *//*# sourceMappingURL=main.css.map */

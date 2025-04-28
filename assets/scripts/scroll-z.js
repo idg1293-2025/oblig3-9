@@ -139,9 +139,9 @@ $(window).scroll(function () {
 
   if (yOffset > switchPoint) {
     var offsetX = (yOffset - switchPoint);
-    $('.horizontal-scroll, .horizontal-2').css('transform', 'translateX(' + (-offsetX) + 'px)');
+    $('.horizontal-scroll, .horizontal-2, .horizontal-3').css('transform', 'translateX(' + (-offsetX) + 'px)');
   } else {
-    $('.horizontal- .horizontal-2').css('transform', 'translateX(0)');
+    $('.horizontal- .horizontal-2, .horizontal-3').css('transform', 'translateX(0)');
   }
 });
 
