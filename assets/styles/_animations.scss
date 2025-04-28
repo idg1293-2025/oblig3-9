@@ -24,7 +24,7 @@
     }
 
 /* Vilde animations */
-@keyframes fall {
+@keyframes petalfall {
     0% {
         transform: translateY(0) rotate(0deg); 
         opacity: 1; 
@@ -122,3 +122,35 @@
 }
 
 /* Oleksandra animations */
+@keyframes shrinkIce {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+// Bear animation
+@keyframes sinkBear {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+}
+
+// Snow animation
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
